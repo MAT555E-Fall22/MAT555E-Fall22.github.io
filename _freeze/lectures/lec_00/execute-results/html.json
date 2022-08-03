@@ -1,0 +1,16 @@
+{
+  "hash": "cc7a8766cc6e68c79dee3229872108f4",
+  "result": {
+    "markdown": "---\ntitle: \"Week 00\"\nauthor: \"Gül İnan\"\ndate: \"August 02, 2022\"\ncomments:\n  hypothesis: \n    theme: clean\nexecute: \n  enabled: true\n  warning: false\n  error: false\nformat: \n  html:\n    code-fold: false\n---\n\n\n## Learning Objectives\n\n* Understand regression\n* Perform regression analysis\n\n## Lecture Slides\n\n## Lab Materials\n\n## Suggested Further Reading\n\n\n::: {.cell}\n\n```{.r .cell-code}\ngetwd()\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"/Users/gulinan/mysite/lectures\"\n```\n:::\n:::\n",
+    "supporting": [
+      "lec_00_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,32 @@
+---
+title: "Week 01"
+author: "Gül İnan"
+date: "August 02, 2022"
+comments:
+  hypothesis: 
+    theme: clean
+execute: 
+  enabled: true
+  warning: false
+  error: false
+format: 
+  html:
+    code-fold: false
+---
+
+## Learning Objectives
+
+* Understand regression
+* Perform regression analysis
+
+## Lecture Slides
+
+## Lab Materials
+
+ - [Lab 01- Simple Linear Regression](/labs/lab_01.html)
+ 
+## Suggested Further Reading
+
+```{r}
+getwd()
+```
