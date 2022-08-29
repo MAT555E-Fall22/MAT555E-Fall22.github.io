@@ -45,7 +45,7 @@ website:
           
 format:
   html:
-    theme: pulse
+    theme: flatly
     css: styles.css
     toc: true
     code-copy: true
