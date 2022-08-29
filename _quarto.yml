@@ -37,7 +37,6 @@ website:
           - href: syllabus.qmd
       - section: "**Lecture Materials**"
         contents:
-          - href: lectures/lec_00.qmd
           - href: lectures/lec_01.qmd 
       - section: "**Lab Materials**"
         contents: 

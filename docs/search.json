@@ -138,33 +138,5 @@
     "title": "Week 01",
     "section": "Suggested Further Reading",
     "text": "Suggested Further Reading\n\ngetwd()\n\n[1] \"/Users/gulinan/mysite/lectures\""
-  },
-  {
-    "objectID": "lectures/lec_00.html",
-    "href": "lectures/lec_00.html",
-    "title": "Week 00",
-    "section": "",
-    "text": "Understand regression\nPerform regression analysis"
-  },
-  {
-    "objectID": "lectures/lec_00.html#lecture-slides",
-    "href": "lectures/lec_00.html#lecture-slides",
-    "title": "Week 00",
-    "section": "Lecture Slides",
-    "text": "Lecture Slides"
-  },
-  {
-    "objectID": "lectures/lec_00.html#lab-materials",
-    "href": "lectures/lec_00.html#lab-materials",
-    "title": "Week 00",
-    "section": "Lab Materials",
-    "text": "Lab Materials"
-  },
-  {
-    "objectID": "lectures/lec_00.html#suggested-further-reading",
-    "href": "lectures/lec_00.html#suggested-further-reading",
-    "title": "Week 00",
-    "section": "Suggested Further Reading",
-    "text": "Suggested Further Reading\n\ngetwd()\n\n[1] \"/Users/gulinan/mysite/lectures\""
   }
 ]
