@@ -21,7 +21,7 @@ methods and algorithms for inference and prediction.</li>
 
 ## Course Type
 
-This is an graduate-level elective course and it is open to all graduate students at ITU.
+This is a graduate-level elective course and it is open to all graduate students at ITU.
 
 ## Course Credits
 
@@ -74,7 +74,7 @@ Week 7. Cross-validation. Unsupervised pre-processing. Grid search and hyper-par
 
 Week 8. ITU Fall Break.
 
-Week 9. Model assessment and selection. Regularization methods for regression and classification problems. Ridge regression and lasso.
+Week 9. Model assessment and selection. Regularization methods for regression and classification problems. Ridge regression and lasso. Extensions to non-convex penalties.
 
 Week 10. Moving beyond linearity. Polynomial regression. Regression splines.
 
