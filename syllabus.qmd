@@ -12,7 +12,7 @@ editor: visual
 
 `MAT555E` is a graduate level course which aims to provide an introduction to commonly used statistical methods for inference and prediction problems in data analysis. The course will harmonize statistical theory and data analysis through examples. This course is designed such that:\
 
-<ol>
+<ul>
 
 <li>To provide the fundamental mathematical, statistical, and computational concepts behind supervised and unsupervised statistical learning methods and algorithms for inference and prediction.</li>
 
@@ -22,7 +22,7 @@ editor: visual
 
 <li>To provide the implementation of these methods in Python.</li>
 
-</ol>
+</ul>
 
 </p>
 
@@ -104,12 +104,12 @@ Week 15. Final review and examples.
 
 A student who completed this course successfully is expected to:
 
-<ol>
+<ul>
 <li>To be fluent in the fundamental concepts and principles behind supervised and unsupervised statistical learning methods,</li>
 <li> To be able to identify which method(s) might be suitable for conducting data analysis on specific real life data sets,</li>
 <li>Get familiar with Python [Scikit-Learn](https://scikit-learn.org/stable/) library, and</li>
 <li>Be prepared for more advanced coursework or scientific research in machine learning and related fields.</li>
-</ol>
+</ul>
 
 immediately following the course, and/or a few months after the course.
 
@@ -125,7 +125,7 @@ All lecture materials.
 
 Students are encouraged to consult the following sources on their own:
 
-<ol>
+<ul>
 
 <li>Hastie, T., Tibshirani, R., Friedman, J.H., and Friedman, J.H. (2009). The Elements of Statistical Learning: Data Mining, Inference, and Prediction. New York: Springer. \[Hard copy available at ITU Mustafa Inan Library with CALL #Q325.5 .H37 2009\] \[Available online at <https://hastie.su.domains/ElemStatLearn/>\]</li>
 
@@ -139,7 +139,7 @@ Students are encouraged to consult the following sources on their own:
 
 <li>Müller, A.C., and Guido, S. (2016). Introduction to Machine Learning with Python: A Guide for Data Scientists. O'Reilly Media, Inc. \[Available online at <https://github.com/amueller/introduction_to_ml_with_python>\].</li>
 
-</ol>
+</ul>
 
 </p>
 
@@ -147,13 +147,13 @@ Students are encouraged to consult the following sources on their own:
 
 <p align="justify">
 
-<ol>
+<ul>
 
 <li>Murphy, K.P. (2022). Probabilistic Machine Learning: An Introduction. MIT Press. \[Available online at <https://probml.github.io/pml-book/book1.html>\].</li>
 
 <li>Bishop, C.M., Nasrabadi, N. M. (2006). Pattern Recognition and Machine Learning. New York: Springer. \[Hard copy available at ITU Mechanical Eng. Library with CALL #Q327 .B52 2006\]</li>
 
-</ol>
+</ul>
 
 </p>
 
@@ -237,9 +237,9 @@ The students are expected to ask and answer questions, participate in in-class a
 
 Please:
 
-1.  Use a proper descriptive subject line (which may consist of the course number MAT555E followed by a short phrase summarizing the subject of your e-mail).
-2.  Start off your e-mail with a proper greeting, introduce yourself (give your name), then state your problem as short as possible.
-3.  Finally, use a proper closing and then finish your e-mail with your first name and so on.
+- Use a proper descriptive subject line (which may consist of the course number MAT555E followed by a short phrase summarizing the subject of your e-mail).
+- Start off your e-mail with a proper greeting, introduce yourself (give your name), then state your problem as short as possible.
+- Finally, use a proper closing and then finish your e-mail with your first name and so on.
 
 Feel free to send me e-mails. But be sure you that give me enough time to get back to you.
 
