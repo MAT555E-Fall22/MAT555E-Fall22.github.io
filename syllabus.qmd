@@ -105,7 +105,7 @@ A student who completed this course successfully is expected to:
 immediately following the course, and/or a few months after the course.
 </p>
 
-## Textbook:
+## Textbook
 
 All lecture materials.
 
@@ -168,7 +168,7 @@ I also honor other national and religious holidays. Students, who needs flexibil
 
 Please read the information below as a reference for how this class will be conducted.
 
-## Grading Policy: (will be updated)
+## Grading Policy (will be updated)
 
 | Assessment Method | Contribution to Final Grade |
 |:------------------|:----------------------------|
@@ -177,7 +177,7 @@ Please read the information below as a reference for how this class will be cond
 |                   |                             |
 
 
-## Midterm date:  (will be updated)
+## Midterm date  (will be updated)
 
 
 ## Late Submission Policy (will be updated)
