@@ -9,7 +9,8 @@ editor: visual
 ## Course Description and Objectives
 
 <p align="justify">
-`MAT555E` is a graduate level course which aims to provide an introduction to statistical learning methods commonly used for inference and prediction. The course will harmonize statistical theory and data analysis through examples. This course aims to:
+`MAT555E` is a graduate level course which aims to provide an introduction to commonly used statistical methods for inference and prediction
+problems in data analysis. The course will harmonize statistical theory and data analysis through examples. This course is designed such that:  
 <ol> 
 <li>To provide the fundamental mathematical, statistical, and computational concepts behind supervised and unsupervised statistical learning
 methods and algorithms for inference and prediction.</li>
@@ -46,10 +47,11 @@ Since the course also touches on the mathematical and statistical theory behind 
 `CRN:14267:` Tuesdays between 14:30-17:30 at ***.
 
 
-## Course Logistics (will be updated)
+## Course Logistics 
 
 Course related all announcements will be done through <a href="https://ninova.itu.edu.tr">Ninova</a>. Lecture materials (lecture slides, code scripts, assignments etc) will be uploaded on <a href="https://ninova.itu.edu.tr">Ninova</a> and posted on 
-<a href="https://github.com/MAT555E-Fall22">GitHub organization</a> of the course.
+<a href="https://github.com/MAT555E-Fall22">GitHub organization</a> of the course. Students are expected to bring their own portable computer to
+the class.
 
 ## Course Workload (will be updated)
 
