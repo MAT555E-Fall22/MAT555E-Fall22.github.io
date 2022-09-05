@@ -131,9 +131,7 @@ Students are encouraged to consult the following sources on their own:
 
 <li>James, G., Witten, D., Hastie, T., and Tibshirani, R. (2021). An Introduction to Statistical Learning: With Applications in R. New York: Springer. \[Available online at <https://www.statlearning.com/> \].</li>
 
-<li>
-
-Fan, J., Li, R., Zhang, C.H., and Zou, H. (2020). Statistical Foundations of Data Science. Chapman and Hall/CRC.
+<li> Fan, J., Li, R., Zhang, C.H., and Zou, H. (2020). Statistical Foundations of Data Science. Chapman and Hall/CRC. </li>
 
 <li>Deisenroth, M.P., Faisal, A.A., and Ong, C. S. (2020). Mathematics for Machine Learning. Cambridge University Press. \[Available online at <https://mml-book.github.io/>\].</li>
 
