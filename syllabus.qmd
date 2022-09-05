@@ -105,17 +105,10 @@ Week 15. Final review and examples.
 A student who completed this course successfully is expected to:
 
 <ol>
-
 <li>To be fluent in the fundamental concepts and principles behind supervised and unsupervised statistical learning methods,</li>
-
-<li>
-
-To be able to identify which method(s) might be suitable for conducting data analysis on specific real life data sets,
-
+<li> To be able to identify which method(s) might be suitable for conducting data analysis on specific real life data sets,</li>
 <li>Get familiar with Python [Scikit-Learn](https://scikit-learn.org/stable/) library, and</li>
-
 <li>Be prepared for more advanced coursework or scientific research in machine learning and related fields.</li>
-
 </ol>
 
 immediately following the course, and/or a few months after the course.
