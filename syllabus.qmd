@@ -62,10 +62,9 @@ Since the course also touches on the mathematical and statistical theory behind 
 
 Course related all announcements will be done through <a href="https://ninova.itu.edu.tr">Ninova</a>. Lecture materials (lecture slides, code scripts, assignments etc) will be uploaded on <a href="https://ninova.itu.edu.tr">Ninova</a> and posted on <a href="https://github.com/MAT555E-Fall22">GitHub organization</a> of the course. Students are expected to bring their own portable computer to the class.
 
-## Course Workload 
+## Course Workload
 
 1 midterm exam, 1 group-based paper presentation with a written-report, 1 final exam, and in-class performance.
-
 
 ## Course Tentative Plan
 
@@ -108,10 +107,15 @@ Week 15. Final review and examples.
 A student who completed this course successfully is expected to:
 
 <ul>
+
 <li>To be fluent in the fundamental concepts and principles behind supervised and unsupervised statistical learning methods,</li>
-<li> To be able to identify which method(s) might be suitable for conducting data analysis on specific real life data sets,</li>
+
+<li>To be able to identify which method(s) might be suitable for conducting data analysis on specific real life data sets,</li>
+
 <li>Get familiar with Python [Scikit-Learn](https://scikit-learn.org/stable/) library, and</li>
+
 <li>Be prepared for more advanced coursework or scientific research in machine learning and related fields.</li>
+
 </ul>
 
 immediately following the course, and/or a few months after the course.
@@ -134,7 +138,7 @@ Students are encouraged to consult the following sources on their own:
 
 <li>James, G., Witten, D., Hastie, T., and Tibshirani, R. (2021). An Introduction to Statistical Learning: With Applications in R. New York: Springer. \[Available online at <https://www.statlearning.com/> \].</li>
 
-<li> Fan, J., Li, R., Zhang, C.H., and Zou, H. (2020). Statistical Foundations of Data Science. Chapman and Hall/CRC. </li>
+<li>Fan, J., Li, R., Zhang, C.H., and Zou, H. (2020). Statistical Foundations of Data Science. Chapman and Hall/CRC.</li>
 
 <li>Deisenroth, M.P., Faisal, A.A., and Ong, C. S. (2020). Mathematics for Machine Learning. Cambridge University Press. \[Available online at <https://mml-book.github.io/>\].</li>
 
@@ -160,7 +164,7 @@ Students are encouraged to consult the following sources on their own:
 
 </p>
 
-## Off-Campus Access to the ITU Library E-sources:
+## Off-Campus Access to the ITU Library E-sources
 
 <p align="justify">
 
@@ -196,33 +200,32 @@ I also honor other national and religious holidays. Students, who needs flexibil
 
 Please read the information below as a reference for how this class will be conducted.
 
-## Grading Policy 
+## Grading Policy
 
-| Assessment Method   | Contribution to Final Grade |
-|:--------------------|:----------------------------|
-|In-class performance | 10%                         |
-|Midterm  exam        | 30%                         |
-|Paper presentation   | 30%                         |
-|Final exam           | 30%                         |
+| Assessment Method    | Contribution to Final Grade |
+|:---------------------|:----------------------------|
+| In-class performance | 10%                         |
+| Midterm exam         | 30%                         |
+| Paper presentation   | 30%                         |
+| Final exam           | 30%                         |
 
+## Midterm coverage and date
 
-## Midterm coverage and date 
-
-The midterm will be on `November 3rd, 2022 between 17:30-20:30`. The midterm topics will cover whatever we have covered up to that week. The main aim of the midterm is to assess whether you are able to frame a data analysis problem, implement it, and report the results. The midterm will be a hands-on and open-book exam. For that reason, you have to bring your own portable computer to the exam place.
+The midterm will be on `November 3rd, 2022 between 17:30-20:30`. The midterm topics will cover whatever we have covered up to that week. The main aim of the midterm is to assess whether you are able to frame a data analysis problem, implement it, and report the results. The midterm will be hands-on and open-book exam. For that reason, you have to bring your own portable computer to the exam place.
 
 ## Group-based paper presentation (with report submission) and date
 
 The group-based paper presentations will be on `December 8th, 2022 between 17:30-20:30`. When the semester starts, I urge you to visit [Proceedings of Machine Learning Research](https://proceedings.mlr.press/) and pick a paper published within nearly past three years (2022, 2021, and 2020) at [AISTATS](https://aistats.org/), [ICML](https://icml.cc/), or [NeurIPS](https://nips.cc/). I can anticipate that the content of these papers may be very heavy compared to our class topics. However, the main aim of group-based paper presentation (along with a report submission) is to asses whether you are able to read and understand a research problem recently carried out. The group size can be at most 2 and the presentation duration is 30 minutes (25 min. talk + 5 min. Q.A.).
 
-## Final exam coverage and date 
+## Final exam coverage and date
 
-The final exam date will be announced by ITU SIS later in December. The final exam topics will cover whatever we have covered throughout the semester with more advanced problems compared to midterm. The final exam will be a hands-on and open-book exam. For that reason, you have to bring your own portable computer to the exam place.  
+The final exam date will be announced by ITU SIS later in December. The final exam topics will cover whatever we have covered throughout the semester with more advanced problems compared to midterm. The final exam will be hands-on and open-book exam. For that reason, you have to bring your own portable computer to the exam place.
 
-## Final Exam Attendance Policy 
+## Final Exam Attendance Policy
 
 There is no VF rule to attend or not to attend the final exam.
 
-## Make-Up Exam Policy 
+## Make-Up Exam Policy
 
 <p align="justify">
 
@@ -246,9 +249,9 @@ The students are expected to ask and answer questions, participate in in-class a
 
 Please:
 
-- Use a proper descriptive subject line (which may consist of the course number MAT555E followed by a short phrase summarizing the subject of your e-mail).
-- Start off your e-mail with a proper greeting, introduce yourself (give your name), then state your problem as short as possible.
-- Finally, use a proper closing and then finish your e-mail with your first name and so on.
+-   Use a proper descriptive subject line (which may consist of the course number MAT555E followed by a short phrase summarizing the subject of your e-mail).
+-   Start off your e-mail with a proper greeting, introduce yourself (give your name), then state your problem as short as possible.
+-   Finally, use a proper closing and then finish your e-mail with your first name and so on.
 
 Feel free to send me e-mails. But be sure you that give me enough time to get back to you.
 
