@@ -62,17 +62,20 @@ Since the course also touches on the mathematical and statistical theory behind 
 
 Course related all announcements will be done through <a href="https://ninova.itu.edu.tr">Ninova</a>. Lecture materials (lecture slides, code scripts, assignments etc) will be uploaded on <a href="https://ninova.itu.edu.tr">Ninova</a> and posted on <a href="https://github.com/MAT555E-Fall22">GitHub organization</a> of the course. Students are expected to bring their own portable computer to the class.
 
-## Course Workload (will be updated)
+## Course Workload 
+
+1 midterm exam, 1 group-based paper presentation with a written-report, 1 final exam, and in-class performance.
+
 
 ## Course Tentative Plan
 
 We will closely follow the weekly schedule given below. However, weekly class schedules are subject to change depending on the progress we make as a class.
 
-Week 1. Introduction. Framing a learning problem. Supervised learning. Simple linear regression.
+Week 1. Introduction. Framing a learning problem. Explanatory data analysis.
 
-Week 2. Multiple linear regression.
+Week 2. Simple linear regression.
 
-Week 3. Multiple linear regression continu'ed.
+Week 3. Multiple linear regression.
 
 Week 4. Introduction to classification. Logistic regression. Multinomial logistic regression.
 
@@ -195,29 +198,36 @@ Please read the information below as a reference for how this class will be cond
 
 ## Grading Policy (will be updated)
 
-| Assessment Method | Contribution to Final Grade |
-|:------------------|:----------------------------|
-|                   | 10%                         |
-|                   | 40%                         |
-|                   |                             |
+| Assessment Method   | Contribution to Final Grade |
+|:--------------------|:----------------------------|
+|In-class performance | 10%                         |
+|Midterm  exam        | 30%                         |
+|Paper presentation   | 30%                         |
+|Final exam           | 30%                         |
 
-## Midterm date (will be updated)
 
-## Late Submission Policy (will be updated)
+## Midterm coverage and date 
+
+The midterm will be on `November 3rd, 2022 between 17:30-20:30`. The midterm topics will cover whatever we have covered up to that week. The main aim of the midterm is to assess whether you are able to frame a data analysis problem, implement it, and report the results. The midterm will be a hands-on and open-book exam. For that reason, you have to bring your own portable computer to the exam place.
+
+## Group-based presentation and date
+
+The group-based paper presentations will `December 8th, 2022 between 17:30-20:30`. 
+
+
+## Final exam coverage and date 
+
+The final exam date will be announced by ITU SIS later in December. The final exam topics will cover whatever we have covered throughout the semester with more advanced problems compared to midterm. The final exam will be a hands-on and open-book exam. For that reason, you have to bring your own portable computer to the exam place.  
+
+## Final Exam Attendance Policy 
+
+There is no VF rule to attend or not to attend the final exam.
+
+## Make-Up Exam Policy 
 
 <p align="justify">
 
-Students are expected to do homework assignments by themselves. Homework assignments will not be accepted after deadline. There are NO make-ups for missed homework. The students who have Covid-19 medical report during the submission periods can ask for extension only.
-
-<p>
-
-## Final Exam Attendance Policy (will be updated)
-
-## Make-Up Exam Policy (will be updated)
-
-<p align="justify">
-
-The students who miss either midterm exam or final exam due to a health problem can take a make-up exam as long as they have a valid medical report taken on the exam day. The medical report should be handed in immediately (within two days of its expiration). There will be **NO** make-up for missed homework, quizzes etc.
+The students who miss either midterm exam or final exam due to a health problem can take a make-up exam as long as they have a valid medical report taken on the exam day. The medical report should be handed in immediately (within two days of its expiration). There will be **NO** make-up for missed in-class activities.
 
 <p>
 
