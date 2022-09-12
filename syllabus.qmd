@@ -210,10 +210,9 @@ Please read the information below as a reference for how this class will be cond
 
 The midterm will be on `November 3rd, 2022 between 17:30-20:30`. The midterm topics will cover whatever we have covered up to that week. The main aim of the midterm is to assess whether you are able to frame a data analysis problem, implement it, and report the results. The midterm will be a hands-on and open-book exam. For that reason, you have to bring your own portable computer to the exam place.
 
-## Group-based presentation and date
+## Group-based paper presentation and date
 
-The group-based paper presentations will `December 8th, 2022 between 17:30-20:30`. 
-
+The group-based paper presentations will be on `December 8th, 2022 between 17:30-20:30`. When the semester starts, I urge you to visit [Proceedings of Machine Learning Research](https://proceedings.mlr.press/) and pick a paper published within nearly past three years (2022, 2021, and 2020) at [AISTATS](https://aistats.org/), [ICML](https://icml.cc/), or [NeurIPS](https://nips.cc/). I can anticipate the content of these papers are very heavy compared to our class topics. However, the main aim of group-based paper presentation is to asses whether you are able to read and understand a research problem recently carried out. The group size can be at most 2 and the presentation duration is 30 minutes (25 min. talk + 5 min. Q.A.).
 
 ## Final exam coverage and date 
 
