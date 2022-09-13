@@ -1,7 +1,7 @@
 ---
 title: "Week 01"
 author: "Gül İnan"
-date: "August 02, 2022"
+date: "September 20, 2022"
 comments:
   hypothesis: 
     theme: clean
@@ -16,17 +16,17 @@ format:
 
 ## Learning Objectives
 
-* Understand regression
-* Perform regression analysis
+* Brief introduction to statistical learning
+* Simple techniques for data exploration
 
 ## Lecture Slides
 
+- [Fall22-Week 01: Introduction](/labs/lab_01.html)
+ 
 ## Lab Materials
 
- - [Lab 01- Simple Linear Regression](/labs/lab_01.html)
+- [Fall22-Lab 01: Exploratory Data Analysis](/labs/lab_01.html)
  
-## Suggested Further Reading
 
-```{r}
-getwd()
-```
+
+

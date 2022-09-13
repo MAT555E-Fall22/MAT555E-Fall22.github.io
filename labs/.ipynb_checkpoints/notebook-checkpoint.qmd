@@ -1,0 +1,25 @@
+---
+title: "Lab 01"
+comments:
+  hypothesis:
+    theme: clean
+execute:
+  enabled: true
+  warning: false
+  error: false
+format:
+  html:
+    code-fold: false
+---
+
+## Introduction to Simple Linear Regression
+
+```{r}
+#| echo: false
+library(reticulate)
+```
+
+```{python}
+2+2
+```
+
