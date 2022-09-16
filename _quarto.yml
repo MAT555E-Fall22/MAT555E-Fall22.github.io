@@ -21,7 +21,7 @@ website:
 
   sidebar: 
     logo: "images/logo.png"
-    pinned: true
+    pinned: false
     align: center
     tools:
       - icon: github
