@@ -344,11 +344,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>Grad.Rate</code> : Graduation rate</li>
 </ul></li>
 </ul>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#warnings.filterwarnings('ignore')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#download the .csv file into your local and import it into your current</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Jupyter Notebook session</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#i use a relative path, but make sure that you set your own path correctly</span></span>
@@ -356,12 +356,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>college_df <span class="op">=</span> pd.read_csv(<span class="st">"datasets/College.csv"</span>, index_col <span class="op">=</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#print the first 5 rows of the data</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#each row refers to a college</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#each column refers to an attribute for the colleges</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>college_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="38">
 
 <div>
 
@@ -500,10 +500,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#returns the column labels of the df</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>college_df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>Index(['Private', 'Apps', 'Accept', 'Enroll', 'Top10perc', 'Top25perc',
        'F.Undergrad', 'P.Undergrad', 'Outstate', 'Room.Board', 'Books',
        'Personal', 'PhD', 'Terminal', 'S.F.Ratio', 'perc.alumni', 'Expend',
@@ -511,17 +511,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       dtype='object')</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#returns a tuple with number of rows and columns</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>college_df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="40">
 <pre><code>(777, 18)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Note that this is a data frame</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(college_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="41">
 <pre><code>pandas.core.frame.DataFrame</code></pre>
 </div>
 </div>
@@ -556,10 +556,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>By contrast, some categorical scales have a <strong>natural ordering of values</strong>. The categories form an <strong>ordinal scale</strong>.</li>
 <li><strong>Examples</strong> are perceived happiness (<em>not too happy, pretty happy, very happy</em>), headache pain (<em>none, slight, moderate, severe</em>), and political philosophy (<em>very liberal, slightly liberal, moderate, slightly conservative, very conservative</em>).</li>
 </ul>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#print the data types of columns</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>college_df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="42">
 <pre><code>Private         object
 Apps             int64
 Accept           int64
@@ -581,17 +581,17 @@ Grad.Rate        int64
 dtype: object</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#private atrribute is a binary variable</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">'Private'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="43">
 <pre><code>array(['Yes', 'No'], dtype=object)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#books is a discrete variable</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">'Books'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="44">
 <pre><code>array([ 450,  750,  400,  800,  500,  300,  660,  600,  650,  550,  900,
          96,  350,  700,  540, 1000,  355,  630,  475, 1495, 2000,  410,
         560,  860,  720,  425,  612,  480,  525,  526,  570, 2340,  654,
@@ -606,7 +606,7 @@ dtype: object</code></pre>
         617])</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get a general summary of the data</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>college_df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -658,12 +658,12 @@ memory usage: 115.3+ KB</code></pre>
 <li>Are there any missing observations?</li>
 </ul></li>
 </ol>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#we already checked most of them, but let's check</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#whether any missing values</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">#college_df.isnull(): alias of isna()  </span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>college_df.isna().<span class="bu">sum</span>()   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="46">
 <pre><code>Private        0
 Apps           0
 Accept         0
@@ -705,11 +705,11 @@ dtype: int64</code></pre>
 <li>Similarly, <strong>Deciles</strong> and <strong>Percentiles</strong> are defined as division points that divide the rank-ordered data into <strong>10</strong> and <strong>100</strong> equal segments.</li>
 </ul></li>
 </ul>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the mean values of numeric columns only</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#by default skipna=True</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>college_df.mean(numeric_only <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="47">
 <pre><code>Apps            3001.638353
 Accept          2018.804376
 Enroll           779.972973
@@ -730,10 +730,10 @@ Grad.Rate         65.463320
 dtype: float64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the median values of numeric columns only</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>college_df.median(numeric_only <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="48">
 <pre><code>Apps           1558.0
 Accept         1110.0
 Enroll          434.0
@@ -754,24 +754,24 @@ Grad.Rate        65.0
 dtype: float64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">'S.F.Ratio'</span>].mode()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="49">
 <pre><code>0    12.1
 dtype: float64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">'Private'</span>].mode()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="50">
 <pre><code>0    Yes
 dtype: object</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the frequency of each category of Private variable</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">'Private'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="51">
 <pre><code>Yes    565
 No     212
 Name: Private, dtype: int64</code></pre>
@@ -789,11 +789,11 @@ Name: Private, dtype: int64</code></pre>
 <li><strong>Interquartile range (IQR)</strong>: is the difference between Q3 and Q1. IQR contains the middle 50% of data.</li>
 <li><strong>Range</strong> is the difference between the maximum and minimum values in the sample.</li>
 </ul>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the variance values of numeric columns only</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co">#by default skipna=True</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>college_df.var(numeric_only <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="52">
 <pre><code>Apps           1.497846e+07
 Accept         6.007960e+06
 Enroll         8.633684e+05
@@ -814,11 +814,11 @@ Grad.Rate      2.950737e+02
 dtype: float64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the std values of numeric columns only</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#by default skipna=True</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>college_df.std(numeric_only <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="53">
 <pre><code>Apps           3870.201484
 Accept         2451.113971
 Enroll          929.176190
@@ -839,11 +839,11 @@ Grad.Rate        17.177710
 dtype: float64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#or get a full summary for each variable</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co">#you need to manually calculate IQR=Q3-Q1</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>college_df.describe().<span class="bu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="54">
 
 <div>
 
@@ -1047,7 +1047,7 @@ dtype: float64</code></pre>
 <li><p>The sample skewness is measured as:</p>
 <p><span class="math display">\[ \frac{\sqrt{n}\sum_{i}^{n}(x_i-\bar{x})^3}{\big(\sum_{i}^{n}(x_i-\bar{x})^2\big)^\frac{3}{2}}. \]</span></p></li>
 </ul>
-<div class="cell" data-execution_count="31">
+<div class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1065,7 +1065,7 @@ dtype: float64</code></pre>
 <p><img src="Week_01_Eda_01_files/figure-html/cell-21-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="30">
+<div class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://stackoverflow.com/questions/40112487/attributeerror-numpy-ndarray-object-has-no-attribute-median</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co">#https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co">#check out the mean and median, they should be close to each other</span></span>
@@ -1074,58 +1074,73 @@ dtype: float64</code></pre>
 <pre><code>Mean=-0.0015, Median=0.0015</code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#or get the other measures, look at in</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the symmetric distributions, skewness is close to 0.</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>stats.describe(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="57">
+<pre><code>DescribeResult(nobs=100000, minmax=(-4.717908113448087, 4.364469403009946), mean=-0.0014900664839476684, variance=0.9997450526672419, skewness=-0.008348981045154868, kurtosis=0.01248822911019376)</code></pre>
 </div>
-<div class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generate large number of random variables from exponential dist. with scale param = 1</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">#returns a numpy array</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> stats.expon.rvs(scale <span class="op">=</span> <span class="dv">1</span>, size <span class="op">=</span> <span class="dv">100000</span>, random_state <span class="op">=</span> <span class="dv">1773</span>)</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co">#get a histogram of the data</span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>plt.hist(y, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'A right-skewed distribution example'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Values'</span>)</span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">10</span>, <span class="dv">60000</span>, <span class="st">'Skewness &gt; 0'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)    </span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generate large number of random variables from exponential dist. with scale param = 1</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co">#returns a numpy array</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> stats.expon.rvs(scale <span class="op">=</span> <span class="dv">1</span>, size <span class="op">=</span> <span class="dv">100000</span>, random_state <span class="op">=</span> <span class="dv">1773</span>)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co">#get a histogram of the data</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>plt.hist(y, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'A right-skewed distribution example'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Values'</span>)</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">10</span>, <span class="dv">60000</span>, <span class="st">'Skewness &gt; 0'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)    </span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="Week_01_Eda_01_files/figure-html/cell-24-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check out the mean and median, mean should be greater than median</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Mean=</span><span class="sc">%.4f</span><span class="st">, Median=</span><span class="sc">%.4f</span><span class="st">'</span><span class="op">%</span> (y.mean(), np.median(y)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check out the mean and median, mean should be greater than median</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Mean=</span><span class="sc">%.4f</span><span class="st">, Median=</span><span class="sc">%.4f</span><span class="st">'</span><span class="op">%</span> (y.mean(), np.median(y)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mean=0.9987, Median=0.6917</code></pre>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#or get the other measures, look at, in</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the right-skewed distributions, skewness is positive.</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>stats.describe(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generate large number of random variables from a left skeed dist. with skeweness -5</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co">#returns a numpy array</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> stats.skewnorm.rvs(a <span class="op">=</span> <span class="op">-</span><span class="dv">5</span>, size <span class="op">=</span> <span class="dv">100000</span>, random_state <span class="op">=</span> <span class="dv">1773</span>)</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co">#get a histogram of the data</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>plt.hist(z, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'A left-skewed distribution example'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)</span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Values'</span>)</span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="op">-</span><span class="dv">4</span>, <span class="dv">25000</span>, <span class="st">'Skewness &lt; 0'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)  </span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">#or get the other measures, look at, in</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the right-skewed distributions, skewness is positive.</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>stats.describe(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="60">
+<pre><code>DescribeResult(nobs=100000, minmax=(3.073149724927421e-06, 13.351146996791892), mean=0.9987103275783477, variance=0.9925253514338582, skewness=2.0073799405685375, kurtosis=6.232692611906376)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generate large number of random variables from a left skeed dist. with skeweness -5</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co">#returns a numpy array</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> stats.skewnorm.rvs(a <span class="op">=</span> <span class="op">-</span><span class="dv">5</span>, size <span class="op">=</span> <span class="dv">100000</span>, random_state <span class="op">=</span> <span class="dv">1773</span>)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co">#get a histogram of the data</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>plt.hist(z, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'A left-skewed distribution example'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Values'</span>)</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="op">-</span><span class="dv">4</span>, <span class="dv">25000</span>, <span class="st">'Skewness &lt; 0'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)  </span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="Week_01_Eda_01_files/figure-html/cell-27-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check out the mean and median, mean should be smaller than median</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Mean=</span><span class="sc">%.4f</span><span class="st">, Median=</span><span class="sc">%.4f</span><span class="st">'</span><span class="op">%</span> (z.mean(), np.median(z)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="62">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check out the mean and median, mean should be smaller than median</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Mean=</span><span class="sc">%.4f</span><span class="st">, Median=</span><span class="sc">%.4f</span><span class="st">'</span><span class="op">%</span> (z.mean(), np.median(z)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mean=-0.7820, Median=-0.6729</code></pre>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">#or get the other measures, look at in</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the right-skewed distributions, skewness is positive.</span></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>stats.describe(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="63">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">#or get the other measures, look at in</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the right-skewed distributions, skewness is positive.</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>stats.describe(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="63">
+<pre><code>DescribeResult(nobs=100000, minmax=(-4.757740420390817, 0.6210253575361764), mean=-0.7819669683426621, variance=0.3870349600207956, skewness=-0.8625796090777151, kurtosis=0.7531576433616411)</code></pre>
+</div>
 </div>
 </section>
 </section>
@@ -1141,20 +1156,26 @@ y(\lambda)=\begin{cases}
       log(y) &amp; \quad y = 0 \\
    \end{cases}.
 \]</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">#perform Box-Cox transformation on y (original data)</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>transformed_y, best_lambda <span class="op">=</span> stats.boxcox(y) </span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co">#this the lambda that maximizes the log-likelihood function.</span></span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'λ = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (best_lambda))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co">#perform Box-Cox transformation on y (original data)</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>transformed_y, best_lambda <span class="op">=</span> stats.boxcox(y) </span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="co">#this the lambda that maximizes the log-likelihood function.</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'λ = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (best_lambda))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>λ = 0.2664</code></pre>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get a histogram of the transformed data</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co">#we can see that the transformed data follows a normal distribution.</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>plt.hist(transformed_y, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of the transformed data'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Values'</span>)</span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get a histogram of the transformed data</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="co">#we can see that the transformed data follows a normal distribution.</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>plt.hist(transformed_y, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of the transformed data'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Values'</span>)</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_01_files/figure-html/cell-31-output-1.png" class="img-fluid"></p>
+</div>
 </div>
 </section>
 <section id="shapiro-wilk-test" class="level2">
@@ -1172,19 +1193,25 @@ y(\lambda)=\begin{cases}
 <li>On the other hand, if the <strong>p-value</strong> is <strong>greater</strong> than the chosen significance level, then <span class="math inline">\(H_0\)</span> cannot be rejected, then we can conclude that the <strong>data</strong> is from a <strong>normally</strong> distributed population.</li>
 </ul></li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#let's apply Shapiro-Wilk test to the data named x (we already know that</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co">#it comes from normal distribution</span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co">#the function returns the osberved test statistic and its corresponding p-value.</span></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>shapiro_stat, p_value <span class="op">=</span> stats.shapiro(x)</span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'P-value = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (p_value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">#let's apply Shapiro-Wilk test to the data named x (we already know that</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co">#it comes from normal distribution</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="co">#the function returns the osberved test statistic and its corresponding p-value.</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>shapiro_stat, p_value <span class="op">=</span> stats.shapiro(x)</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'P-value = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (p_value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P-value = 0.9466</code></pre>
+</div>
 </div>
 <p>Since the p-value = 0.9466 is greater than 0.05, we <strong>fail to reject</strong> the null hypothesis. We <strong>do not have sufficient evidence</strong> to say that the data <strong>does not come from a normal distribution</strong>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">#let's apply Shapiro-Wilk test to the data named y which is generated from exponential dist.</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the function returns the osberved test statistic and its corresponding p-value.</span></span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>shapiro_stat, p_value <span class="op">=</span> stats.shapiro(y)</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'P-value = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (p_value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co">#let's apply Shapiro-Wilk test to the data named y which is generated from exponential dist.</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the function returns the osberved test statistic and its corresponding p-value.</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>shapiro_stat, p_value <span class="op">=</span> stats.shapiro(y)</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'P-value = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (p_value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P-value = 0.0000</code></pre>
+</div>
 </div>
 <p>Since the p-value = 0.0000 is less than .05, we <strong>reject</strong> the null hypothesis. We <strong>have sufficient evidence</strong> to say that the data <strong>does not come from a normal distribution</strong>.</p>
 <p>A <strong>note</strong> from <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html?highlight=shapiro#scipy.stats.shapiro">scipy.stats.shapiro</a> says that “For N &gt; 5000 the W test statistic is accurate but the p-value may not be.”</p>
@@ -1204,59 +1231,160 @@ y(\lambda)=\begin{cases}
 <li>The <strong>larger</strong> the absolute value <span class="math inline">\(r_{xy}\)</span>, the <strong>stronger</strong> the association.</li>
 </ul>
 <p>Let’s investigate how the scatter plot changes as the correlation changes.</p>
-<div class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing the necessary libraries</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets</span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-whitegrid'</span>)</span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>]<span class="op">=</span><span class="dv">14</span>,<span class="dv">6</span></span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="co"># define a corr function with flexible corr input</span></span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> corr_widget(corr <span class="op">=</span> <span class="dv">0</span>):</span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Defining the mean vector</span></span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>    mean_x_y <span class="op">=</span> np.array([<span class="dv">20</span>,<span class="dv">30</span>])</span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Setting sd and corr </span></span>
-<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>    sigma_x <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>    sigma_y <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>    corr_x_y <span class="op">=</span> corr</span>
-<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Defining the variance-covariance matrix</span></span>
-<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a>    cov_x_y <span class="op">=</span> np.array([[sigma_x<span class="op">**</span><span class="dv">2</span>, corr_x_y<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y], [corr_x_y<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y, sigma_y<span class="op">**</span><span class="dv">2</span>]])</span>
-<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generating a data based on bivariate normal distribution</span></span>
-<span id="cb49-24"><a href="#cb49-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># with given mean vector and variance-covariance matrix</span></span>
-<span id="cb49-25"><a href="#cb49-25" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb49-26"><a href="#cb49-26" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> stats.multivariate_normal.rvs(mean <span class="op">=</span> mean_x_y, cov <span class="op">=</span> cov_x_y, size <span class="op">=</span> <span class="dv">100</span>)</span>
-<span id="cb49-27"><a href="#cb49-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-28"><a href="#cb49-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plotting the generated samples</span></span>
-<span id="cb49-29"><a href="#cb49-29" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb49-30"><a href="#cb49-30" aria-hidden="true" tabindex="-1"></a>    plt.plot(data[:,<span class="dv">0</span>], data[:,<span class="dv">1</span>], <span class="st">'o'</span>, c <span class="op">=</span> <span class="st">'blue'</span>)</span>
-<span id="cb49-31"><a href="#cb49-31" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="ss">f'Correlation between X and Y = </span><span class="sc">{</span>corr_x_y<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb49-32"><a href="#cb49-32" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'X'</span>)</span>
-<span id="cb49-33"><a href="#cb49-33" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">'Y'</span>)</span>
-<span id="cb49-34"><a href="#cb49-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-35"><a href="#cb49-35" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
-<span id="cb49-36"><a href="#cb49-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-37"><a href="#cb49-37" aria-hidden="true" tabindex="-1"></a><span class="co">#turn it into a widget</span></span>
-<span id="cb49-38"><a href="#cb49-38" aria-hidden="true" tabindex="-1"></a>corr_wid <span class="op">=</span> widgets.FloatSlider(<span class="bu">min</span> <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>, <span class="bu">max</span> <span class="op">=</span> <span class="dv">1</span>, step <span class="op">=</span> <span class="fl">0.1</span>, value <span class="op">=</span> <span class="dv">0</span>, description <span class="op">=</span> <span class="st">"$r_x_y$"</span>)</span>
-<span id="cb49-39"><a href="#cb49-39" aria-hidden="true" tabindex="-1"></a><span class="co">#display(corr_wid)    </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="68">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing the necessary libraries</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-whitegrid'</span>)</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>]<span class="op">=</span><span class="dv">14</span>,<span class="dv">6</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="co"># define a corr function with flexible corr input</span></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> corr_widget(corr <span class="op">=</span> <span class="dv">0</span>):</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Defining the mean vector</span></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>    mean_x_y <span class="op">=</span> np.array([<span class="dv">20</span>,<span class="dv">30</span>])</span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Setting sd and corr </span></span>
+<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a>    sigma_x <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a>    sigma_y <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a>    corr_x_y <span class="op">=</span> corr</span>
+<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Defining the variance-covariance matrix</span></span>
+<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-21"><a href="#cb57-21" aria-hidden="true" tabindex="-1"></a>    cov_x_y <span class="op">=</span> np.array([[sigma_x<span class="op">**</span><span class="dv">2</span>, corr_x_y<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y], [corr_x_y<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y, sigma_y<span class="op">**</span><span class="dv">2</span>]])</span>
+<span id="cb57-22"><a href="#cb57-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-23"><a href="#cb57-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generating a data based on bivariate normal distribution</span></span>
+<span id="cb57-24"><a href="#cb57-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># with given mean vector and variance-covariance matrix</span></span>
+<span id="cb57-25"><a href="#cb57-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb57-26"><a href="#cb57-26" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> stats.multivariate_normal.rvs(mean <span class="op">=</span> mean_x_y, cov <span class="op">=</span> cov_x_y, size <span class="op">=</span> <span class="dv">100</span>)</span>
+<span id="cb57-27"><a href="#cb57-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-28"><a href="#cb57-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plotting the generated samples</span></span>
+<span id="cb57-29"><a href="#cb57-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb57-30"><a href="#cb57-30" aria-hidden="true" tabindex="-1"></a>    plt.plot(data[:,<span class="dv">0</span>], data[:,<span class="dv">1</span>], <span class="st">'o'</span>, c <span class="op">=</span> <span class="st">'blue'</span>)</span>
+<span id="cb57-31"><a href="#cb57-31" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="ss">f'Correlation between X and Y = </span><span class="sc">{</span>corr_x_y<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb57-32"><a href="#cb57-32" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'X'</span>)</span>
+<span id="cb57-33"><a href="#cb57-33" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">'Y'</span>)</span>
+<span id="cb57-34"><a href="#cb57-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-35"><a href="#cb57-35" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb57-36"><a href="#cb57-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-37"><a href="#cb57-37" aria-hidden="true" tabindex="-1"></a><span class="co">#turn it into a widget</span></span>
+<span id="cb57-38"><a href="#cb57-38" aria-hidden="true" tabindex="-1"></a>corr_wid <span class="op">=</span> widgets.FloatSlider(<span class="bu">min</span> <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>, <span class="bu">max</span> <span class="op">=</span> <span class="dv">1</span>, step <span class="op">=</span> <span class="fl">0.1</span>, value <span class="op">=</span> <span class="dv">0</span>, description <span class="op">=</span> <span class="st">"$r_x_y$"</span>)</span>
+<span id="cb57-39"><a href="#cb57-39" aria-hidden="true" tabindex="-1"></a><span class="co">#display(corr_wid)    </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, play with the follwing slider to see how correlation changes.</p>
-<div class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>widgets.interact(corr_widget, corr <span class="op">=</span> corr_wid)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>widgets.interact(corr_widget, corr <span class="op">=</span> corr_wid)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"dfc052e1e649436fbb3fdaa28de45775","version_major":2,"version_minor":0}
+{"model_id":"402fa65c0c8742a787b70ce00999c17d","version_major":2,"version_minor":0}
 </script>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> session_info</span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>session_info.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> session_info</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>session_info.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="70">
+<details>
+<summary>Click to view session information</summary>
+<pre>-----
+ipywidgets          7.6.5
+matplotlib          3.4.3
+numpy               1.21.2
+pandas              1.3.3
+scipy               1.7.1
+session_info        1.0.0
+-----
+</pre>
+<details>
+<summary>Click to view modules imported as dependencies</summary>
+<pre>PIL                         8.3.2
+anyio                       NA
+appnope                     0.1.2
+attr                        21.2.0
+babel                       2.9.1
+backcall                    0.2.0
+beta_ufunc                  NA
+binom_ufunc                 NA
+brotli                      1.0.9
+certifi                     2021.05.30
+cffi                        1.14.6
+chardet                     4.0.0
+charset_normalizer          2.0.0
+colorama                    0.4.4
+cycler                      0.10.0
+cython_runtime              NA
+dateutil                    2.8.2
+debugpy                     1.4.1
+decorator                   5.1.0
+defusedxml                  0.7.1
+entrypoints                 0.3
+google                      NA
+idna                        3.1
+ipykernel                   6.4.1
+ipython_genutils            0.2.0
+jedi                        0.18.0
+jinja2                      3.0.1
+json5                       NA
+jsonschema                  3.2.0
+jupyter_server              1.11.0
+jupyterlab_server           2.8.1
+kiwisolver                  1.3.2
+markupsafe                  2.0.1
+matplotlib_inline           NA
+mpl_toolkits                NA
+nbclassic                   NA
+nbformat                    5.1.3
+nbinom_ufunc                NA
+packaging                   21.3
+parso                       0.8.2
+pexpect                     4.8.0
+pickleshare                 0.7.5
+pkg_resources               NA
+prometheus_client           NA
+prompt_toolkit              3.0.20
+ptyprocess                  0.7.0
+pvectorc                    NA
+pydev_ipython               NA
+pydevconsole                NA
+pydevd                      2.4.1
+pydevd_concurrency_analyser NA
+pydevd_file_utils           NA
+pydevd_plugins              NA
+pydevd_tracing              NA
+pygments                    2.10.0
+pyparsing                   2.4.7
+pyrsistent                  NA
+pytz                        2021.1
+requests                    2.26.0
+send2trash                  NA
+six                         1.16.0
+sniffio                     1.2.0
+socks                       1.7.1
+storemagic                  NA
+terminado                   0.12.1
+tornado                     6.1
+traitlets                   5.1.0
+urllib3                     1.26.7
+wcwidth                     0.2.5
+websocket                   0.57.0
+zmq                         22.3.0
+</pre>
+</details> <!-- seems like this ends pre, so might as well be explicit -->
+<pre>-----
+IPython             7.27.0
+jupyter_client      7.0.3
+jupyter_core        4.8.1
+jupyterlab          3.1.12
+notebook            6.4.4
+-----
+Python 3.8.12 | packaged by conda-forge | (default, Sep 16 2021, 01:59:00) [Clang 11.1.0 ]
+macOS-10.15.7-x86_64-i386-64bit
+-----
+Session information updated at 2022-09-17 01:09
+</pre>
+</details>
+</div>
 </div>
 
 
