@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://MAT555E-Fall22.github.io/labs/lab_01.html</loc>
-    <lastmod>2022-09-14T07:46:06.165Z</lastmod>
+    <loc>https://MAT555E-Fall22.github.io/labs/Week_01_Eda_01.html</loc>
+    <lastmod>2022-09-16T21:05:34.992Z</lastmod>
+  </url>
+  <url>
+    <loc>https://MAT555E-Fall22.github.io/labs/Week_01_Eda_02.html</loc>
+    <lastmod>2022-09-16T21:05:35.976Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/index.html</loc>
-    <lastmod>2022-09-14T07:46:06.717Z</lastmod>
+    <lastmod>2022-09-16T21:05:36.657Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/instructor.html</loc>
-    <lastmod>2022-09-14T07:46:07.288Z</lastmod>
+    <lastmod>2022-09-16T21:05:37.130Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/syllabus.html</loc>
-    <lastmod>2022-09-14T07:46:07.926Z</lastmod>
+    <lastmod>2022-09-16T21:05:37.799Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/lec_01.html</loc>
-    <lastmod>2022-09-14T07:46:08.337Z</lastmod>
+    <lastmod>2022-09-16T21:05:38.207Z</lastmod>
   </url>
 </urlset>

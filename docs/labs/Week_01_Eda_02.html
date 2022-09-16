@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gül İnan">
+<meta name="dcterms.date" content="2022-09-20">
+
+<title>MAT555E - Lab 02</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../labs/Week_01_Eda_01.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Lab 02</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/MAT555E-Fall22" title="" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://ninova.itu.edu.tr/tr/" title="" class="sidebar-tool px-1"><i class="bi bi-code-square"></i></a>
+</div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true"><strong>Course Information</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instructor.html" class="sidebar-item-text sidebar-link">Instructor Information</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">Course Syllabus</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true"><strong>Lecture Materials</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_01.html" class="sidebar-item-text sidebar-link">Week 01</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true"><strong>Lab Materials</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Week 01</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/Week_01_Eda_01.html" class="sidebar-item-text sidebar-link">Lab 01</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/Week_01_Eda_02.html" class="sidebar-item-text sidebar-link active">Lab 02</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link active" data-scroll-target="#visualization">Visualization</a></li>
+  <li><a href="#tools-for-displaying-single-variables" id="toc-tools-for-displaying-single-variables" class="nav-link" data-scroll-target="#tools-for-displaying-single-variables">Tools for Displaying Single Variables</a>
+  <ul class="collapse">
+  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">Histograms</a></li>
+  <li><a href="#subplotting-with-matplotlib" id="toc-subplotting-with-matplotlib" class="nav-link" data-scroll-target="#subplotting-with-matplotlib">Subplotting with matplotlib</a></li>
+  <li><a href="#density-plots" id="toc-density-plots" class="nav-link" data-scroll-target="#density-plots">Density Plots</a></li>
+  <li><a href="#histograms-density-plots-with-seaborn" id="toc-histograms-density-plots-with-seaborn" class="nav-link" data-scroll-target="#histograms-density-plots-with-seaborn">Histograms, Density Plots with seaborn</a></li>
+  </ul></li>
+  <li><a href="#tools-for-displaying-a-single-variable-with-repect-to-a-categorical-variable" id="toc-tools-for-displaying-a-single-variable-with-repect-to-a-categorical-variable" class="nav-link" data-scroll-target="#tools-for-displaying-a-single-variable-with-repect-to-a-categorical-variable">Tools for Displaying a Single Variable with repect to a Categorical Variable</a>
+  <ul class="collapse">
+  <li><a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots">Boxplots</a></li>
+  </ul></li>
+  <li><a href="#tools-for-displaying-relationships-between-two-variables" id="toc-tools-for-displaying-relationships-between-two-variables" class="nav-link" data-scroll-target="#tools-for-displaying-relationships-between-two-variables">Tools for Displaying Relationships Between Two Variables</a></li>
+  <li><a href="#scatterplot" id="toc-scatterplot" class="nav-link" data-scroll-target="#scatterplot">Scatterplot</a></li>
+  <li><a href="#tools-for-displaying-more-than-two-variables" id="toc-tools-for-displaying-more-than-two-variables" class="nav-link" data-scroll-target="#tools-for-displaying-more-than-two-variables">Tools for Displaying More Than Two Variables</a>
+  <ul class="collapse">
+  <li><a href="#scatterplot-matrix" id="toc-scatterplot-matrix" class="nav-link" data-scroll-target="#scatterplot-matrix">Scatterplot Matrix</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/labs/Week_01_Eda_02.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Lab 02</h1>
+<p class="subtitle lead">Warm-up: Exploratory Data Analysis</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Gül İnan </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 20, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<ol start="3" type="1">
+<li>Where possible, certainly for any variable of particular interest-examine <strong>exploratory visualizations</strong>.</li>
+</ol>
+<section id="visualization" class="level2">
+<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
+<ul>
+<li>The objective of visualization is to <strong>reveal hidden information</strong> through simple charts and diagrams.</li>
+<li>It is instrumental in <strong>identifying patterns and relationships</strong> among groups of variables.</li>
+<li>Visualization techniques depend on the <strong>type of variables</strong>.</li>
+</ul>
+</section>
+<section id="tools-for-displaying-single-variables" class="level2">
+<h2 class="anchored" data-anchor-id="tools-for-displaying-single-variables">Tools for Displaying Single Variables</h2>
+<section id="histograms" class="level3">
+<h3 class="anchored" data-anchor-id="histograms">Histograms</h3>
+<ul>
+<li>Histograms are the most common graphical tool to <strong>represent continuous data</strong>.</li>
+<li>A histogram divides the data into <strong>bins</strong>, counts the number of data points falling into each bin, and shows the <strong>bins on the horizontal axis</strong> and the <strong>frequency on thevertical axis</strong>.</li>
+<li>The <strong>class width</strong> (bin width) has an impact on the shape of the histogram.</li>
+</ul>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#For college_df, produce some histograms for a few of the quantitative variables.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#change numbers of bins </span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#first import the data into session</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>college_df <span class="op">=</span> pd.read_csv(<span class="st">"datasets/College.csv"</span>, index_col <span class="op">=</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="subplotting-with-matplotlib" class="level3">
+<h3 class="anchored" data-anchor-id="subplotting-with-matplotlib">Subplotting with matplotlib</h3>
+<p>Using the College data set, let’s create a <strong>2x2 subplot</strong> with a subplot for each of the following variables:</p>
+<ul>
+<li>Apps</li>
+<li>perc.alumni</li>
+<li>S.F.Ratio</li>
+<li>Expend</li>
+</ul>
+<p>where each subplot is a histogram.</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#create subplots</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>figs, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize <span class="op">=</span> (<span class="dv">16</span>,<span class="dv">8</span>)) <span class="co">#figsize: width, height, respectively.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#axs object is a 2 by 2 numpy array</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#type(axs)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#axs</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#you can change the number of bins, as you wish</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#could not give y axis title for each subplot</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>n_bins <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#the frequency of number applications decreases as magnitude increases</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>,<span class="dv">0</span>].hist(college_df[<span class="st">'Apps'</span>], bins <span class="op">=</span> n_bins, color <span class="op">=</span> <span class="st">'red'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>,<span class="dv">0</span>].set_title(<span class="st">'The histogram of number of applications received'</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>,<span class="dv">1</span>].hist(college_df[<span class="st">'Accept'</span>], bins <span class="op">=</span> n_bins, color <span class="op">=</span> <span class="st">'green'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>,<span class="dv">1</span>].set_title(<span class="st">'The histogram of number of applications accepted'</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#the distribution of estimated book costs is symmetric. there a few expensive books used at colleges.</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>,<span class="dv">0</span>].hist(college_df[<span class="st">'Books'</span>], bins <span class="op">=</span> n_bins, color <span class="op">=</span> <span class="st">'orange'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>,<span class="dv">0</span>].set_title(<span class="st">'The histogram of estimated book costs'</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>,<span class="dv">1</span>].hist(college_df[<span class="st">'Expend'</span>], bins <span class="op">=</span> n_bins, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>,<span class="dv">1</span>].set_title(<span class="st">'The histogram of instructional expenditure per student'</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.tight_layout()</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>plt.show(figs) <span class="co">#plt.show() turns off printing the data array etc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-4-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="density-plots" class="level3">
+<h3 class="anchored" data-anchor-id="density-plots">Density Plots</h3>
+<ul>
+<li>A <strong>density plot</strong> is a <strong>smoothed, continuous</strong> version of a <strong>histogram</strong> estimated from the data.</li>
+<li>A point is drawn at the top of every individual rectangular bin and all of these points are then connected together to make a single smooth density estimation. (Try to make a connection between <strong>Rieman sums</strong> and its limit as the number of bins goes to infinity (or width of the bins approaches to zero) and <strong>histograms</strong>).</li>
+<li>The height of the curve is adjusted so that the <strong>total area under the curve integrates to one</strong>.</li>
+</ul>
+</section>
+<section id="histograms-density-plots-with-seaborn" class="level3">
+<h3 class="anchored" data-anchor-id="histograms-density-plots-with-seaborn">Histograms, Density Plots with seaborn</h3>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#draw a histogram with seaborn, kind="hist" is default</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sns.displot(x <span class="op">=</span> college_df.Expend, kind<span class="op">=</span><span class="st">"hist"</span>) </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#draw a denstiy plot with seaborn with kernel density</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>sns.displot(x <span class="op">=</span> college_df.Expend, kind<span class="op">=</span><span class="st">"kde"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#overlay histogram with a density plot </span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>sns.displot(x <span class="op">=</span> college_df.Expend, kde<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f813b9093a0&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-5-output-2.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-5-output-3.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-5-output-4.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="tools-for-displaying-a-single-variable-with-repect-to-a-categorical-variable" class="level2">
+<h2 class="anchored" data-anchor-id="tools-for-displaying-a-single-variable-with-repect-to-a-categorical-variable">Tools for Displaying a Single Variable with repect to a Categorical Variable</h2>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Each kind of plot can be drawn separately for subsets of data using **hue mapping**</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Investigate how the expenditure is changing with respect to school type</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, hue <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"hist"</span>) </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, hue <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"kde"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#as you can see instructional expenditure is  higher in private schools compared to non-private ones</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f813e558760&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-6-output-2.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-6-output-3.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#alternatively you can prefer stacked plots</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, hue <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"hist"</span>, multiple <span class="op">=</span> <span class="st">"stack"</span>) </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, hue <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"kde"</span>, multiple <span class="op">=</span> <span class="st">"stack"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f813f290850&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-7-output-2.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-7-output-3.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#faceting, map the expenditure variable into private variable with col argument</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, col <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"hist"</span>) </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, col <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"kde"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f813f096a60&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-8-output-2.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-8-output-3.png" class="img-fluid"></p>
+</div>
+</div>
+<section id="boxplots" class="level3">
+<h3 class="anchored" data-anchor-id="boxplots">Boxplots</h3>
+<ul>
+<li>Boxplots are used to describe the shape of data distribution.</li>
+<li>We can also use the boxplots the to describe the shape of data distribution with respect to the levels of a categorical variable.</li>
+<li>It also enables us to identify outliers where an observation is considered as an outlier if it is either less than Q1 - 1.5 IQR or greater than Q3 + 1.5 IQR, with IQR = Q3 - Q1.</li>
+<li>This rule is conservative and often too many points are identified as outliers. Hence sometimes only those points outside of [Q1 - 3 IQR, Q3 + 3 IQR] are only identified as outliers.</li>
+</ul>
+<p>Using the College data set, we will create a new <strong>categorical variabl</strong>e, called <code>Elite</code>, by binning the <code>Top10perc</code> variable. We are going to divide universities into two groups based on whether or not the proportion of students coming from the top 10% of their high school classes exceeds 50%.</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#attach a new column to the college df</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>college_df <span class="op">=</span> pd.read_csv(<span class="st">"datasets/College.csv"</span>, index_col <span class="op">=</span> <span class="dv">0</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#this should be much more smarter.</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#i tried boolean indexing below, but it worked first, but,</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#it did not work later.</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#college_df['Elite'] = "No"</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#college_df.Elite[college_df.Top10perc&gt;50] = "Yes"</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#alternatively, a bit longer way to add a new column to a data frame</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>elite <span class="op">=</span> []</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> college_df[<span class="st">'Top10perc'</span>]:</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> i <span class="op">&gt;</span> <span class="dv">50</span> :    elite.append(<span class="st">'Yes'</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:          elite.append(<span class="st">'No'</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">'Elite'</span>] <span class="op">=</span> elite </span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co">#college_df.head()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#compare the graduation rates with respect to school's elite status</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Elite"</span>, y <span class="op">=</span> <span class="st">"Grad.Rate"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#as you can see in the elite schools, the graduate rate is higher compared to non-elite ones</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#we can see a few outliers in the non-elite schools. while graduation rate is</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#very high in some non-elite schools, graduation rate is very low in some non-elite schools</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>&lt;AxesSubplot:xlabel='Elite', ylabel='Grad.Rate'&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-10-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># produce side-by-side boxplots of Outstate versus Private.</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Private"</span>, y <span class="op">=</span> <span class="st">"Outstate"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#as you can see in private schools, out-state tution fees are also very high.</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#if you born in Arizona, but, want to study in a private school, such as in Boston,</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#you are more likely to pay for higher tution rates.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>&lt;AxesSubplot:xlabel='Private', ylabel='Outstate'&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-11-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="tools-for-displaying-relationships-between-two-variables" class="level2">
+<h2 class="anchored" data-anchor-id="tools-for-displaying-relationships-between-two-variables">Tools for Displaying Relationships Between Two Variables</h2>
+</section>
+<section id="scatterplot" class="level2">
+<h2 class="anchored" data-anchor-id="scatterplot">Scatterplot</h2>
+<ul>
+<li>The most conventional way to display relationships between two variables is a scatterplot.</li>
+<li>It shows the direction and strength of association between two variables.</li>
+</ul>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get a scatter plot of outstat tution fee and graduation rate</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Outstate"</span>, y <span class="op">=</span> <span class="st">"Grad.Rate"</span>) </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#As tuition fee increases, the high graduation rate increases</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>&lt;AxesSubplot:xlabel='Outstate', ylabel='Grad.Rate'&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-12-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#how above graph chages with respect to school type?</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">'Outstate'</span>, y <span class="op">=</span> <span class="st">"Grad.Rate"</span>, hue <span class="op">=</span> <span class="st">'Private'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>&lt;AxesSubplot:xlabel='Outstate', ylabel='Grad.Rate'&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-13-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="tools-for-displaying-more-than-two-variables" class="level2">
+<h2 class="anchored" data-anchor-id="tools-for-displaying-more-than-two-variables">Tools for Displaying More Than Two Variables</h2>
+<section id="scatterplot-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="scatterplot-matrix">Scatterplot Matrix</h3>
+<ul>
+<li>Displaying more than two variables on a single scatterplot is not possible.</li>
+<li>A <strong>scatterplot matrix</strong> is one possible visualization of three or more continuous variables taken two at a time.</li>
+</ul>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#let's get a pairwise matrix plot of some variables. </span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">#diag_kind = None, otherwise histogram appears on the diagonals.</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>sns.pairplot(college_df, <span class="bu">vars</span> <span class="op">=</span> [<span class="st">'Outstate'</span>, <span class="st">'Grad.Rate'</span>, <span class="st">'Personal'</span>], diag_kind <span class="op">=</span> <span class="va">None</span>, hue <span class="op">=</span> <span class="st">'Private'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>&lt;seaborn.axisgrid.PairGrid at 0x7f813b8cfd00&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-14-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> college_df[[<span class="st">'Outstate'</span>, <span class="st">'Grad.Rate'</span>, <span class="st">'Personal'</span>]]</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>df.corr()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Outstate</th>
+      <th>Grad.Rate</th>
+      <th>Personal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Outstate</th>
+      <td>1.000000</td>
+      <td>0.571290</td>
+      <td>-0.299087</td>
+    </tr>
+    <tr>
+      <th>Grad.Rate</th>
+      <td>0.571290</td>
+      <td>1.000000</td>
+      <td>-0.269344</td>
+    </tr>
+    <tr>
+      <th>Personal</th>
+      <td>-0.299087</td>
+      <td>-0.269344</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> session_info</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>session_info.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<details>
+<summary>Click to view session information</summary>
+<pre>-----
+matplotlib          3.4.3
+numpy               1.21.2
+pandas              1.3.3
+seaborn             0.11.2
+session_info        1.0.0
+-----
+</pre>
+<details>
+<summary>Click to view modules imported as dependencies</summary>
+<pre>PIL                         8.3.2
+anyio                       NA
+appnope                     0.1.2
+attr                        21.2.0
+babel                       2.9.1
+backcall                    0.2.0
+beta_ufunc                  NA
+binom_ufunc                 NA
+brotli                      1.0.9
+certifi                     2021.05.30
+cffi                        1.14.6
+chardet                     4.0.0
+charset_normalizer          2.0.0
+colorama                    0.4.4
+cycler                      0.10.0
+cython_runtime              NA
+dateutil                    2.8.2
+debugpy                     1.4.1
+decorator                   5.1.0
+defusedxml                  0.7.1
+entrypoints                 0.3
+google                      NA
+idna                        3.1
+ipykernel                   6.4.1
+ipython_genutils            0.2.0
+ipywidgets                  7.6.5
+jedi                        0.18.0
+jinja2                      3.0.1
+json5                       NA
+jsonschema                  3.2.0
+jupyter_server              1.11.0
+jupyterlab_server           2.8.1
+kiwisolver                  1.3.2
+markupsafe                  2.0.1
+matplotlib_inline           NA
+mpl_toolkits                NA
+nbclassic                   NA
+nbformat                    5.1.3
+nbinom_ufunc                NA
+packaging                   21.3
+parso                       0.8.2
+pexpect                     4.8.0
+pickleshare                 0.7.5
+pkg_resources               NA
+prometheus_client           NA
+prompt_toolkit              3.0.20
+ptyprocess                  0.7.0
+pvectorc                    NA
+pydev_ipython               NA
+pydevconsole                NA
+pydevd                      2.4.1
+pydevd_concurrency_analyser NA
+pydevd_file_utils           NA
+pydevd_plugins              NA
+pydevd_tracing              NA
+pygments                    2.10.0
+pyparsing                   2.4.7
+pyrsistent                  NA
+pytz                        2021.1
+requests                    2.26.0
+scipy                       1.7.1
+send2trash                  NA
+six                         1.16.0
+sniffio                     1.2.0
+socks                       1.7.1
+statsmodels                 0.13.2
+storemagic                  NA
+terminado                   0.12.1
+tornado                     6.1
+traitlets                   5.1.0
+urllib3                     1.26.7
+wcwidth                     0.2.5
+websocket                   0.57.0
+zmq                         22.3.0
+</pre>
+</details> <!-- seems like this ends pre, so might as well be explicit -->
+<pre>-----
+IPython             7.27.0
+jupyter_client      7.0.3
+jupyter_core        4.8.1
+jupyterlab          3.1.12
+notebook            6.4.4
+-----
+Python 3.8.12 | packaged by conda-forge | (default, Sep 16 2021, 01:59:00) [Clang 11.1.0 ]
+macOS-10.15.7-x86_64-i386-64bit
+-----
+Session information updated at 2022-09-16 23:45
+</pre>
+</details>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../labs/Week_01_Eda_01.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 01</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">This website is built with <a href="https://quarto.org/"><img src="https://quarto.org/quarto.png" class="img-fluid" alt="Quarto" width="80"></a>.</div>   
+    <div class="nav-footer-right">© Copyright 2022, Gül İnan</div>
+  </div>
+</footer>
+
+
+
+</body></html>

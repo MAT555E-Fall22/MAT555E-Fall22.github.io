@@ -30,6 +30,7 @@ website:
     style: "floating"
     search: true
     collapse-level: 0
+    
     contents:
       - section: "**Course Information**"
         contents:
@@ -39,8 +40,15 @@ website:
         contents:
           - href: lectures/lec_01.qmd 
       - section: "**Lab Materials**"
-        contents: 
-          - href: labs/lab_01.ipynb  
+        contents:
+          - section: "Week 01"
+            contents:
+              - href: labs/Week_01_Eda_01.ipynb  
+              - href: labs/Week_01_Eda_02.ipynb 
+          
+          
+          
+          
           
 format:
   html:

@@ -21,12 +21,12 @@ format:
 
 ## Lecture Slides
 
-- [Week 01: Introduction](/labs/lab_01.html)
+- [Introduction](/labs/lab_01.html)
  
 ## Lab Materials
 
-- [Lab 01: Exploratory Data Analysis](/labs/lab_01.html)
- 
+- [Exploratory Data Analysis-01](/labs/Week_01_Eda_01.html)
+- [Exploratory Data Analysis-02](/labs/Week_01_Eda_02.html) 
 
 
 

@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gül İnan">
+<meta name="dcterms.date" content="2022-09-20">
+
+<title>MAT555E - Lab 01</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../labs/Week_01_Eda_02.html" rel="next">
+<link href="../lectures/lec_01.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Lab 01</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/MAT555E-Fall22" title="" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://ninova.itu.edu.tr/tr/" title="" class="sidebar-tool px-1"><i class="bi bi-code-square"></i></a>
+</div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true"><strong>Course Information</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../instructor.html" class="sidebar-item-text sidebar-link">Instructor Information</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">Course Syllabus</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true"><strong>Lecture Materials</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_01.html" class="sidebar-item-text sidebar-link">Week 01</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true"><strong>Lab Materials</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Week 01</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/Week_01_Eda_01.html" class="sidebar-item-text sidebar-link active">Lab 01</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/Week_01_Eda_02.html" class="sidebar-item-text sidebar-link">Lab 02</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-data" id="toc-what-is-data" class="nav-link active" data-scroll-target="#what-is-data">What is data?</a></li>
+  <li><a href="#data-representation" id="toc-data-representation" class="nav-link" data-scroll-target="#data-representation">Data representation</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
+  <li><a href="#quantitative-variables" id="toc-quantitative-variables" class="nav-link" data-scroll-target="#quantitative-variables">Quantitative variables</a></li>
+  <li><a href="#categorical-variables" id="toc-categorical-variables" class="nav-link" data-scroll-target="#categorical-variables">Categorical variables</a></li>
+  <li><a href="#why-do-we-analyze-data" id="toc-why-do-we-analyze-data" class="nav-link" data-scroll-target="#why-do-we-analyze-data">Why do we analyze data?</a></li>
+  <li><a href="#how-to-exploring-a-new-data-set" id="toc-how-to-exploring-a-new-data-set" class="nav-link" data-scroll-target="#how-to-exploring-a-new-data-set">How to exploring a new data set?</a>
+  <ul class="collapse">
+  <li><a href="#measures-of-location" id="toc-measures-of-location" class="nav-link" data-scroll-target="#measures-of-location">Measures of Location</a></li>
+  <li><a href="#measures-of-spread" id="toc-measures-of-spread" class="nav-link" data-scroll-target="#measures-of-spread">Measures of Spread</a></li>
+  <li><a href="#measures-of-skewness" id="toc-measures-of-skewness" class="nav-link" data-scroll-target="#measures-of-skewness">Measures of Skewness</a></li>
+  </ul></li>
+  <li><a href="#box-cox-transformation" id="toc-box-cox-transformation" class="nav-link" data-scroll-target="#box-cox-transformation">Box-Cox Transformation</a></li>
+  <li><a href="#shapiro-wilk-test" id="toc-shapiro-wilk-test" class="nav-link" data-scroll-target="#shapiro-wilk-test">Shapiro-Wilk Test</a></li>
+  <li><a href="#measures-of-correlation" id="toc-measures-of-correlation" class="nav-link" data-scroll-target="#measures-of-correlation">Measures of Correlation</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/labs/Week_01_Eda_01.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Lab 01</h1>
+<p class="subtitle lead">Warm-up: Exploratory Data Analysis</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Gül İnan </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 20, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="what-is-data" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-data">What is data?</h2>
+<ul>
+<li>The term <strong>data</strong> refers to the observations gathered on the <strong>characteristics of interest</strong>.</li>
+<li>For example,
+<ul>
+<li>A medical doctor may collect family history of a patient for a medical study,</li>
+<li>Market research companies may collect demographic characteristics of people who voted for political candidates in a particular election, or</li>
+<li>A quality control engineer may collect operating data from an industrial manufacturing process.</li>
+</ul></li>
+<li>Each data point roots from a physical, demographical or behavioral phenomenon.</li>
+</ul>
+</section>
+<section id="data-representation" class="level2">
+<h2 class="anchored" data-anchor-id="data-representation">Data representation</h2>
+<ul>
+<li>The <strong>data</strong> is generally organized and represented in a <strong>rectangular array</strong> of observed values, where
+<ul>
+<li><strong>Each row</strong> refers to the observations for a <strong>particular object</strong> (e.g., patients in a medical study), and</li>
+<li><strong>Each column</strong> refers to the observations for a <strong>particular characteristic</strong> (<em>attribute</em>) (e.g., age of the patients, gender of the patients etc.) recorded for each row.</li>
+</ul></li>
+<li>Many <strong>statistical</strong> software/library requires a similar data structure (e.g., tabular data, tidy data) which is stored in a plain text file or spreadsheet file for data analysis.</li>
+</ul>
+</section>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<ul>
+<li><p>Consider the <a href="https://www.statlearning.com/resources-second-edition">College.csv</a> file which contains a number of variables for 777 different universites and colleges in the U.S.:</p>
+<ul>
+<li><code>Private</code> : Public/private indicator<br>
+</li>
+<li><code>Apps</code> : Number of applications received<br>
+</li>
+<li><code>Accept</code> : Number of applicants accepted</li>
+<li><code>Enroll</code> : Number of new students enrolled</li>
+<li><code>Top10perc</code> : New students from top 10% of high school class</li>
+<li><code>Top25perc</code> : New students from top 25% of high school class</li>
+<li><code>F.Undergrad</code> : Number of full-time undergraduates</li>
+<li><code>P.Undergrad</code> : Number of part-time undergraduates</li>
+<li><code>Outstate</code> : Out-of-state tuition</li>
+<li><code>Room.Board</code> : Room and board costs</li>
+<li><code>Books</code> : Estimated book costs</li>
+<li><code>Personal</code> : Estimated personal spending</li>
+<li><code>PhD</code> : Percent of faculty with Ph.D.’s</li>
+<li><code>Terminal</code> : Percent of faculty with terminal degree</li>
+<li><code>S.F.Ratio</code> : Student/faculty ratio</li>
+<li><code>perc.alumni</code> : Percent of alumni who donate</li>
+<li><code>Expend</code> : Instructional expenditure per student</li>
+<li><code>Grad.Rate</code> : Graduation rate</li>
+</ul></li>
+</ul>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#warnings.filterwarnings('ignore')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#download the .csv file into your local and import it into your current</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Jupyter Notebook session</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#i use a relative path, but make sure that you set your own path correctly</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#the data set involves both column and row names</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>college_df <span class="op">=</span> pd.read_csv(<span class="st">"datasets/College.csv"</span>, index_col <span class="op">=</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#print the first 5 rows of the data</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#each row refers to a college</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#each column refers to an attribute for the colleges</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>college_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Private</th>
+      <th>Apps</th>
+      <th>Accept</th>
+      <th>Enroll</th>
+      <th>Top10perc</th>
+      <th>Top25perc</th>
+      <th>F.Undergrad</th>
+      <th>P.Undergrad</th>
+      <th>Outstate</th>
+      <th>Room.Board</th>
+      <th>Books</th>
+      <th>Personal</th>
+      <th>PhD</th>
+      <th>Terminal</th>
+      <th>S.F.Ratio</th>
+      <th>perc.alumni</th>
+      <th>Expend</th>
+      <th>Grad.Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Abilene Christian University</th>
+      <td>Yes</td>
+      <td>1660</td>
+      <td>1232</td>
+      <td>721</td>
+      <td>23</td>
+      <td>52</td>
+      <td>2885</td>
+      <td>537</td>
+      <td>7440</td>
+      <td>3300</td>
+      <td>450</td>
+      <td>2200</td>
+      <td>70</td>
+      <td>78</td>
+      <td>18.1</td>
+      <td>12</td>
+      <td>7041</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <th>Adelphi University</th>
+      <td>Yes</td>
+      <td>2186</td>
+      <td>1924</td>
+      <td>512</td>
+      <td>16</td>
+      <td>29</td>
+      <td>2683</td>
+      <td>1227</td>
+      <td>12280</td>
+      <td>6450</td>
+      <td>750</td>
+      <td>1500</td>
+      <td>29</td>
+      <td>30</td>
+      <td>12.2</td>
+      <td>16</td>
+      <td>10527</td>
+      <td>56</td>
+    </tr>
+    <tr>
+      <th>Adrian College</th>
+      <td>Yes</td>
+      <td>1428</td>
+      <td>1097</td>
+      <td>336</td>
+      <td>22</td>
+      <td>50</td>
+      <td>1036</td>
+      <td>99</td>
+      <td>11250</td>
+      <td>3750</td>
+      <td>400</td>
+      <td>1165</td>
+      <td>53</td>
+      <td>66</td>
+      <td>12.9</td>
+      <td>30</td>
+      <td>8735</td>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>Agnes Scott College</th>
+      <td>Yes</td>
+      <td>417</td>
+      <td>349</td>
+      <td>137</td>
+      <td>60</td>
+      <td>89</td>
+      <td>510</td>
+      <td>63</td>
+      <td>12960</td>
+      <td>5450</td>
+      <td>450</td>
+      <td>875</td>
+      <td>92</td>
+      <td>97</td>
+      <td>7.7</td>
+      <td>37</td>
+      <td>19016</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>Alaska Pacific University</th>
+      <td>Yes</td>
+      <td>193</td>
+      <td>146</td>
+      <td>55</td>
+      <td>16</td>
+      <td>44</td>
+      <td>249</td>
+      <td>869</td>
+      <td>7560</td>
+      <td>4120</td>
+      <td>800</td>
+      <td>1500</td>
+      <td>76</td>
+      <td>72</td>
+      <td>11.9</td>
+      <td>2</td>
+      <td>10922</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#returns the column labels of the df</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>college_df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>Index(['Private', 'Apps', 'Accept', 'Enroll', 'Top10perc', 'Top25perc',
+       'F.Undergrad', 'P.Undergrad', 'Outstate', 'Room.Board', 'Books',
+       'Personal', 'PhD', 'Terminal', 'S.F.Ratio', 'perc.alumni', 'Expend',
+       'Grad.Rate'],
+      dtype='object')</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#returns a tuple with number of rows and columns</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>college_df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>(777, 18)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Note that this is a data frame</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(college_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>pandas.core.frame.DataFrame</code></pre>
+</div>
+</div>
+<p><strong>Note that</strong> with the increasing variety of data that can be recorded electronically, not all data files have this traditional two-dimesional array format. For example, in medical records, some observations for some subjects may be images (e.g., dental x-rays, brain scans), hand-written prescriptions or a continuous streaming data over time such as monitoring the patient’s heart-rate, respiratory rate etc.</p>
+</section>
+<section id="variables" class="level2">
+<h2 class="anchored" data-anchor-id="variables">Variables</h2>
+<ul>
+<li>A <strong>variable</strong> is a characteristic that can <strong>vary in value</strong> in objects of a data.</li>
+</ul>
+</section>
+<section id="quantitative-variables" class="level2">
+<h2 class="anchored" data-anchor-id="quantitative-variables">Quantitative variables</h2>
+<ul>
+<li>A variable is called <strong>quantitative</strong> when the measurement scale has numerical values that represent different magnitudes of the variable.</li>
+<li><strong>Examples of quantitative variables</strong> are number of good friends, annual income, college GPA, age, and weight.</li>
+<li>A quantitative variable is <strong>discrete</strong> if it can take a set of distinct, separate values, such as the non-negative integers (0,1,2,3, …).</li>
+<li><strong>Examples of discrete variables</strong> are one’s number of good friends, number of computers in household,and number of days playing a sport in the past week.</li>
+<li>A quantitative variable is <strong>continuous</strong> if it can take an infinite continuum of possible real number values.</li>
+<li><strong>Examples of continuous variables</strong> are height, weight, age, distance a person walks in a day, winning time in a marathon race, and how long a cell phone works before it needs recharging.</li>
+</ul>
+</section>
+<section id="categorical-variables" class="level2">
+<h2 class="anchored" data-anchor-id="categorical-variables">Categorical variables</h2>
+<ul>
+<li>A variable is called <strong>categorical</strong> when the measurement scale is a <strong>set of categories</strong>.</li>
+<li><strong>Examples of categorical variables</strong> are marital status (with categories such as <em>single, married, divorced, widowed</em>), primary mode of transportation to work (<em>automobile, bicycle, bus, sub- way, walk</em>), preferred destination for clothes shopping (<em>downtown, Internet, mall, other</em>), and favorite type of music (<em>classical, country, folk, jazz, rap/hip-hop, rock</em>).</li>
+<li>Categorical variables are often called <strong>qualitative</strong>.</li>
+<li>Categorical variables having only <strong>two categories</strong>, such as whether employed (yes, no), are called <strong>binary</strong>.</li>
+<li>Categorical variables have <strong>two types of measurement scales</strong>.</li>
+<li>For some categorical variables, the categories are <strong>unordered</strong>. The categories are then said to form a <strong>nominal scale</strong>.</li>
+<li>By contrast, some categorical scales have a <strong>natural ordering of values</strong>. The categories form an <strong>ordinal scale</strong>.</li>
+<li><strong>Examples</strong> are perceived happiness (<em>not too happy, pretty happy, very happy</em>), headache pain (<em>none, slight, moderate, severe</em>), and political philosophy (<em>very liberal, slightly liberal, moderate, slightly conservative, very conservative</em>).</li>
+</ul>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#print the data types of columns</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>college_df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>Private         object
+Apps             int64
+Accept           int64
+Enroll           int64
+Top10perc        int64
+Top25perc        int64
+F.Undergrad      int64
+P.Undergrad      int64
+Outstate         int64
+Room.Board       int64
+Books            int64
+Personal         int64
+PhD              int64
+Terminal         int64
+S.F.Ratio      float64
+perc.alumni      int64
+Expend           int64
+Grad.Rate        int64
+dtype: object</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#private atrribute is a binary variable</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">'Private'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>array(['Yes', 'No'], dtype=object)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#books is a discrete variable</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">'Books'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>array([ 450,  750,  400,  800,  500,  300,  660,  600,  650,  550,  900,
+         96,  350,  700,  540, 1000,  355,  630,  475, 1495, 2000,  410,
+        560,  860,  720,  425,  612,  480,  525,  526,  570, 2340,  654,
+        666,  380,  470,  680,  595,  520,  625,  530,  120,  490,  330,
+        580,  670,  795,  531,  465,  537,  640,  634,  920,  508,  528,
+        225,  618,  545,  575,  725,  375,  504, 1100,  200,  250,  850,
+        620,  759,  558,  515,  420,  616,  512,  436,  598,  554,  675,
+        610,  370, 1230,  955,  690,  569, 1200,  221,  576,  430,  385,
+        275,  711,  708, 1125,  635,  468,  518,  636,  790,  556,  687,
+        494,  476,  753,  714,  765,  495,  452, 1300,  646,  858,  541,
+        376,  535,  740,  585,  768, 1400,  110,  498,  639,  678,  605,
+        617])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get a general summary of the data</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>college_df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 777 entries, Abilene Christian University to York College of Pennsylvania
+Data columns (total 18 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   Private      777 non-null    object 
+ 1   Apps         777 non-null    int64  
+ 2   Accept       777 non-null    int64  
+ 3   Enroll       777 non-null    int64  
+ 4   Top10perc    777 non-null    int64  
+ 5   Top25perc    777 non-null    int64  
+ 6   F.Undergrad  777 non-null    int64  
+ 7   P.Undergrad  777 non-null    int64  
+ 8   Outstate     777 non-null    int64  
+ 9   Room.Board   777 non-null    int64  
+ 10  Books        777 non-null    int64  
+ 11  Personal     777 non-null    int64  
+ 12  PhD          777 non-null    int64  
+ 13  Terminal     777 non-null    int64  
+ 14  S.F.Ratio    777 non-null    float64
+ 15  perc.alumni  777 non-null    int64  
+ 16  Expend       777 non-null    int64  
+ 17  Grad.Rate    777 non-null    int64  
+dtypes: float64(1), int64(16), object(1)
+memory usage: 115.3+ KB</code></pre>
+</div>
+</div>
+</section>
+<section id="why-do-we-analyze-data" class="level2">
+<h2 class="anchored" data-anchor-id="why-do-we-analyze-data">Why do we analyze data?</h2>
+<ul>
+<li>To understand <strong>what has happened</strong> or <strong>what is happening</strong>,</li>
+<li>To <strong>predict</strong> what is likely to happen, either in the <strong>future</strong> or in other circumstances we have not seen or observed yet,</li>
+<li>To guide us in <strong>making decisions</strong>.</li>
+</ul>
+</section>
+<section id="how-to-exploring-a-new-data-set" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-exploring-a-new-data-set">How to exploring a new data set?</h2>
+<ol type="1">
+<li>Assess the general characteristics of the data set, e.g.,
+<ul>
+<li>How many subjects/objects do we have? How many variables?</li>
+<li>What are the variable names? Are they meaningful? Are the names compatible with the software syntax we are goint to use?</li>
+<li>What type is each variable - e.g., numeric (discrete or continuous), categorical?</li>
+<li>How many unique values does each variable, especially categorical ones, have? (Very important to know before data splitting).</li>
+<li>Are there any missing observations?</li>
+</ul></li>
+</ol>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#we already checked most of them, but let's check</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#whether any missing values</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">#college_df.isnull(): alias of isna()  </span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>college_df.isna().<span class="bu">sum</span>()   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>Private        0
+Apps           0
+Accept         0
+Enroll         0
+Top10perc      0
+Top25perc      0
+F.Undergrad    0
+P.Undergrad    0
+Outstate       0
+Room.Board     0
+Books          0
+Personal       0
+PhD            0
+Terminal       0
+S.F.Ratio      0
+perc.alumni    0
+Expend         0
+Grad.Rate      0
+dtype: int64</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Examine <strong>descriptive statistics</strong> for each variable.</li>
+</ol>
+<ul>
+<li>Descriptive statistics are numbers computed from the data that present a summary of the variables.</li>
+</ul>
+<section id="measures-of-location" class="level3">
+<h3 class="anchored" data-anchor-id="measures-of-location">Measures of Location</h3>
+<ul>
+<li>The most common measures of location are the <strong>Mean</strong>, the <strong>Median</strong>, the <strong>Mode</strong>, and the <strong>Quartiles</strong>.</li>
+<li><strong>Mean</strong>: the arithmetic average of all the observations. The mean equals the sum of all observations divided by the sample size.</li>
+<li><strong>Median</strong>: the middle-most value of the ranked set of observations so that half the observations are greater than the median and the other half is less. Median is a robust measure of central tendency</li>
+<li><strong>Note that</strong> the mean is very sensitive to <strong>outliers </strong>(extreme or unusual observations) whereas the median is not.</li>
+<li><strong>Mode</strong>: the most frequently occurring value in the data set. This makes more sense when attributes are not continuous.</li>
+<li><strong>Quartiles</strong>: division points which split data into four equal parts after rank-ordering them.
+<ul>
+<li>Division points are called <strong>Q1</strong> (the first quartile), <strong>Q2</strong> (the second quartile or median), and <strong>Q3</strong> (the third quartile)</li>
+<li>Similarly, <strong>Deciles</strong> and <strong>Percentiles</strong> are defined as division points that divide the rank-ordered data into <strong>10</strong> and <strong>100</strong> equal segments.</li>
+</ul></li>
+</ul>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the mean values of numeric columns only</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#by default skipna=True</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>college_df.mean(numeric_only <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>Apps            3001.638353
+Accept          2018.804376
+Enroll           779.972973
+Top10perc         27.558559
+Top25perc         55.796654
+F.Undergrad     3699.907336
+P.Undergrad      855.298584
+Outstate       10440.669241
+Room.Board      4357.526384
+Books            549.380952
+Personal        1340.642214
+PhD               72.660232
+Terminal          79.702703
+S.F.Ratio         14.089704
+perc.alumni       22.743887
+Expend          9660.171171
+Grad.Rate         65.463320
+dtype: float64</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the median values of numeric columns only</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>college_df.median(numeric_only <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>Apps           1558.0
+Accept         1110.0
+Enroll          434.0
+Top10perc        23.0
+Top25perc        54.0
+F.Undergrad    1707.0
+P.Undergrad     353.0
+Outstate       9990.0
+Room.Board     4200.0
+Books           500.0
+Personal       1200.0
+PhD              75.0
+Terminal         82.0
+S.F.Ratio        13.6
+perc.alumni      21.0
+Expend         8377.0
+Grad.Rate        65.0
+dtype: float64</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">'S.F.Ratio'</span>].mode()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>0    12.1
+dtype: float64</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">'Private'</span>].mode()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>0    Yes
+dtype: object</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the frequency of each category of Private variable</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">'Private'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>Yes    565
+No     212
+Name: Private, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="measures-of-spread" class="level3">
+<h3 class="anchored" data-anchor-id="measures-of-spread">Measures of Spread</h3>
+<ul>
+<li>Measures of location are not enough to <strong>capture all aspects of the variables</strong>.</li>
+<li>Measures of dispersion are necessary to understand the <strong>variability</strong> of the data.</li>
+<li>The most common measure of dispersion is the <strong>Variance</strong>, the <strong>Standard Deviation</strong>, the <strong>Interquartile Range</strong> and <strong>Range</strong>.</li>
+<li><strong>Variance</strong>: measures how far data values lie from the mean. It is defined as the average of the squared differences between the mean and the individual data values.</li>
+<li><strong>Standard Deviation</strong>: is the square root of the variance. It is defined as the average distance between the mean and the individual data values.</li>
+<li><strong>Interquartile range (IQR)</strong>: is the difference between Q3 and Q1. IQR contains the middle 50% of data.</li>
+<li><strong>Range</strong> is the difference between the maximum and minimum values in the sample.</li>
+</ul>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the variance values of numeric columns only</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co">#by default skipna=True</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>college_df.var(numeric_only <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>Apps           1.497846e+07
+Accept         6.007960e+06
+Enroll         8.633684e+05
+Top10perc      3.111825e+02
+Top25perc      3.922292e+02
+F.Undergrad    2.352658e+07
+P.Undergrad    2.317799e+06
+Outstate       1.618466e+07
+Room.Board     1.202743e+06
+Books          2.725978e+04
+Personal       4.584258e+05
+PhD            2.666086e+02
+Terminal       2.167478e+02
+S.F.Ratio      1.566853e+01
+perc.alumni    1.535567e+02
+Expend         2.726687e+07
+Grad.Rate      2.950737e+02
+dtype: float64</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the std values of numeric columns only</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#by default skipna=True</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>college_df.std(numeric_only <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>Apps           3870.201484
+Accept         2451.113971
+Enroll          929.176190
+Top10perc        17.640364
+Top25perc        19.804778
+F.Undergrad    4850.420531
+P.Undergrad    1522.431887
+Outstate       4023.016484
+Room.Board     1096.696416
+Books           165.105360
+Personal        677.071454
+PhD              16.328155
+Terminal         14.722359
+S.F.Ratio         3.958349
+perc.alumni      12.391801
+Expend         5221.768440
+Grad.Rate        17.177710
+dtype: float64</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#or get a full summary for each variable</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co">#you need to manually calculate IQR=Q3-Q1</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>college_df.describe().<span class="bu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Apps</th>
+      <th>Accept</th>
+      <th>Enroll</th>
+      <th>Top10perc</th>
+      <th>Top25perc</th>
+      <th>F.Undergrad</th>
+      <th>P.Undergrad</th>
+      <th>Outstate</th>
+      <th>Room.Board</th>
+      <th>Books</th>
+      <th>Personal</th>
+      <th>PhD</th>
+      <th>Terminal</th>
+      <th>S.F.Ratio</th>
+      <th>perc.alumni</th>
+      <th>Expend</th>
+      <th>Grad.Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>777.00</td>
+      <td>777.00</td>
+      <td>777.00</td>
+      <td>777.00</td>
+      <td>777.0</td>
+      <td>777.00</td>
+      <td>777.00</td>
+      <td>777.00</td>
+      <td>777.00</td>
+      <td>777.00</td>
+      <td>777.00</td>
+      <td>777.00</td>
+      <td>777.00</td>
+      <td>777.00</td>
+      <td>777.00</td>
+      <td>777.00</td>
+      <td>777.00</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>3001.64</td>
+      <td>2018.80</td>
+      <td>779.97</td>
+      <td>27.56</td>
+      <td>55.8</td>
+      <td>3699.91</td>
+      <td>855.30</td>
+      <td>10440.67</td>
+      <td>4357.53</td>
+      <td>549.38</td>
+      <td>1340.64</td>
+      <td>72.66</td>
+      <td>79.70</td>
+      <td>14.09</td>
+      <td>22.74</td>
+      <td>9660.17</td>
+      <td>65.46</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3870.20</td>
+      <td>2451.11</td>
+      <td>929.18</td>
+      <td>17.64</td>
+      <td>19.8</td>
+      <td>4850.42</td>
+      <td>1522.43</td>
+      <td>4023.02</td>
+      <td>1096.70</td>
+      <td>165.11</td>
+      <td>677.07</td>
+      <td>16.33</td>
+      <td>14.72</td>
+      <td>3.96</td>
+      <td>12.39</td>
+      <td>5221.77</td>
+      <td>17.18</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>81.00</td>
+      <td>72.00</td>
+      <td>35.00</td>
+      <td>1.00</td>
+      <td>9.0</td>
+      <td>139.00</td>
+      <td>1.00</td>
+      <td>2340.00</td>
+      <td>1780.00</td>
+      <td>96.00</td>
+      <td>250.00</td>
+      <td>8.00</td>
+      <td>24.00</td>
+      <td>2.50</td>
+      <td>0.00</td>
+      <td>3186.00</td>
+      <td>10.00</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>776.00</td>
+      <td>604.00</td>
+      <td>242.00</td>
+      <td>15.00</td>
+      <td>41.0</td>
+      <td>992.00</td>
+      <td>95.00</td>
+      <td>7320.00</td>
+      <td>3597.00</td>
+      <td>470.00</td>
+      <td>850.00</td>
+      <td>62.00</td>
+      <td>71.00</td>
+      <td>11.50</td>
+      <td>13.00</td>
+      <td>6751.00</td>
+      <td>53.00</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1558.00</td>
+      <td>1110.00</td>
+      <td>434.00</td>
+      <td>23.00</td>
+      <td>54.0</td>
+      <td>1707.00</td>
+      <td>353.00</td>
+      <td>9990.00</td>
+      <td>4200.00</td>
+      <td>500.00</td>
+      <td>1200.00</td>
+      <td>75.00</td>
+      <td>82.00</td>
+      <td>13.60</td>
+      <td>21.00</td>
+      <td>8377.00</td>
+      <td>65.00</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>3624.00</td>
+      <td>2424.00</td>
+      <td>902.00</td>
+      <td>35.00</td>
+      <td>69.0</td>
+      <td>4005.00</td>
+      <td>967.00</td>
+      <td>12925.00</td>
+      <td>5050.00</td>
+      <td>600.00</td>
+      <td>1700.00</td>
+      <td>85.00</td>
+      <td>92.00</td>
+      <td>16.50</td>
+      <td>31.00</td>
+      <td>10830.00</td>
+      <td>78.00</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>48094.00</td>
+      <td>26330.00</td>
+      <td>6392.00</td>
+      <td>96.00</td>
+      <td>100.0</td>
+      <td>31643.00</td>
+      <td>21836.00</td>
+      <td>21700.00</td>
+      <td>8124.00</td>
+      <td>2340.00</td>
+      <td>6800.00</td>
+      <td>103.00</td>
+      <td>100.00</td>
+      <td>39.80</td>
+      <td>64.00</td>
+      <td>56233.00</td>
+      <td>118.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="measures-of-skewness" class="level3">
+<h3 class="anchored" data-anchor-id="measures-of-skewness">Measures of Skewness</h3>
+<ul>
+<li><p>In addition to the measures of <strong>location</strong> and <strong>dispersion</strong>, the arrangement of data or the shape of the data distribution is also of considerable interest.</p></li>
+<li><p>The most ‘well-behaved’ distribution is a <strong>symmetric distribution</strong> where the mean and the median are coincident.</p></li>
+<li><p>The symmetry is lost if <strong>there exists a tail</strong> in either direction.</p></li>
+<li><p>Skewness measures whether or not a distribution has a single long tail.</p></li>
+<li><p>The sample skewness is measured as:</p>
+<p><span class="math display">\[ \frac{\sqrt{n}\sum_{i}^{n}(x_i-\bar{x})^3}{\big(\sum_{i}^{n}(x_i-\bar{x})^2\big)^\frac{3}{2}}. \]</span></p></li>
+</ul>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co">#generate large number of random variables from standard normal dist.</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co">#returns a numpy array</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> stats.norm.rvs(loc <span class="op">=</span> <span class="dv">0</span>, scale <span class="op">=</span> <span class="dv">1</span>, size <span class="op">=</span> <span class="dv">100000</span>, random_state <span class="op">=</span> <span class="dv">1773</span>)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="co">#get a histogram of the data</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>plt.hist(x, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'A symmetric distribution example'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Values'</span>)</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">2</span>, <span class="dv">30000</span>, <span class="st">'Skewness = 0'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)  </span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_01_files/figure-html/cell-21-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://stackoverflow.com/questions/40112487/attributeerror-numpy-ndarray-object-has-no-attribute-median</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co">#https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co">#check out the mean and median, they should be close to each other</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Mean=</span><span class="sc">%.4f</span><span class="st">, Median=</span><span class="sc">%.4f</span><span class="st">'</span><span class="op">%</span> (np.mean(x), np.median(x)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mean=-0.0015, Median=0.0015</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#or get the other measures, look at in</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the symmetric distributions, skewness is close to 0.</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>stats.describe(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generate large number of random variables from exponential dist. with scale param = 1</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">#returns a numpy array</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> stats.expon.rvs(scale <span class="op">=</span> <span class="dv">1</span>, size <span class="op">=</span> <span class="dv">100000</span>, random_state <span class="op">=</span> <span class="dv">1773</span>)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co">#get a histogram of the data</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>plt.hist(y, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'A right-skewed distribution example'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Values'</span>)</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">10</span>, <span class="dv">60000</span>, <span class="st">'Skewness &gt; 0'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)    </span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_01_files/figure-html/cell-24-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check out the mean and median, mean should be greater than median</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Mean=</span><span class="sc">%.4f</span><span class="st">, Median=</span><span class="sc">%.4f</span><span class="st">'</span><span class="op">%</span> (y.mean(), np.median(y)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#or get the other measures, look at, in</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the right-skewed distributions, skewness is positive.</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>stats.describe(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generate large number of random variables from a left skeed dist. with skeweness -5</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co">#returns a numpy array</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> stats.skewnorm.rvs(a <span class="op">=</span> <span class="op">-</span><span class="dv">5</span>, size <span class="op">=</span> <span class="dv">100000</span>, random_state <span class="op">=</span> <span class="dv">1773</span>)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co">#get a histogram of the data</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>plt.hist(z, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'A left-skewed distribution example'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Values'</span>)</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="op">-</span><span class="dv">4</span>, <span class="dv">25000</span>, <span class="st">'Skewness &lt; 0'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)  </span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_01_files/figure-html/cell-27-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check out the mean and median, mean should be smaller than median</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Mean=</span><span class="sc">%.4f</span><span class="st">, Median=</span><span class="sc">%.4f</span><span class="st">'</span><span class="op">%</span> (z.mean(), np.median(z)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">#or get the other measures, look at in</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the right-skewed distributions, skewness is positive.</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>stats.describe(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="box-cox-transformation" class="level2">
+<h2 class="anchored" data-anchor-id="box-cox-transformation">Box-Cox Transformation</h2>
+<ul>
+<li>A <strong>Box-Cox transformation</strong> is a commonly used statistical method for transforming a <strong>non-normally distributed data</strong> into a <strong>more normally distributed data</strong>.</li>
+<li>The basic idea behind this method is to find some value for <span class="math inline">\(\lambda\)</span> such that the <strong>transformed data</strong> is as close to <strong>normally distributed</strong> as possible, using the following formula:</li>
+</ul>
+<p><span class="math display">\[
+y(\lambda)=\begin{cases}
+      y^{\lambda}-1, &amp; \quad y \neq 0 \\
+      log(y) &amp; \quad y = 0 \\
+   \end{cases}.
+\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">#perform Box-Cox transformation on y (original data)</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>transformed_y, best_lambda <span class="op">=</span> stats.boxcox(y) </span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co">#this the lambda that maximizes the log-likelihood function.</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'λ = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (best_lambda))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get a histogram of the transformed data</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co">#we can see that the transformed data follows a normal distribution.</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>plt.hist(transformed_y, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of the transformed data'</span>, weight <span class="op">=</span> <span class="st">"bold"</span>)</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Values'</span>)</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="shapiro-wilk-test" class="level2">
+<h2 class="anchored" data-anchor-id="shapiro-wilk-test">Shapiro-Wilk Test</h2>
+<ul>
+<li><p><a href="https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test">Shapiro-Wilk test</a> is a non-parametric statistical test used for testing normality.</p></li>
+<li><p>The hypothesis of the Shapiro-Wilk test is:</p>
+<p><span class="math inline">\(H_0\)</span>: The sample <span class="math inline">\(x_1,\ldots, x_n\)</span> comes from a normally distributed population.</p>
+<p><span class="math inline">\(H_1\)</span>: The sample <span class="math inline">\(x_1, \ldots,x_n\)</span> does not come from a normally distributed population.</p></li>
+<li><p>Since the test statistic does not follow a distribution (quantiles of the statistic is calculated through resampling based methods), its cut-off values are not tabulated. Here is the <a href="https://sci2s.ugr.es/keel/pdf/algorithm/articulo/royston1982.pdf">original paper</a>.</p></li>
+<li><p>One way to perform Shapiro-Wilk test is to rely on statistical software/libraries performing this test.</p></li>
+<li><p>When you get the observed value of the statistic and corresponding p-value of the test:</p>
+<ul>
+<li>If the <strong>p-value</strong> is <strong>less than</strong> the chosen significance level (e.g., for an alpha level of 0.05), then <span class="math inline">\(H_0\)</span> is rejected and there is evidence that the <strong>data</strong> tested are <strong>not</strong> normally distributed.</li>
+<li>On the other hand, if the <strong>p-value</strong> is <strong>greater</strong> than the chosen significance level, then <span class="math inline">\(H_0\)</span> cannot be rejected, then we can conclude that the <strong>data</strong> is from a <strong>normally</strong> distributed population.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#let's apply Shapiro-Wilk test to the data named x (we already know that</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co">#it comes from normal distribution</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co">#the function returns the osberved test statistic and its corresponding p-value.</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>shapiro_stat, p_value <span class="op">=</span> stats.shapiro(x)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'P-value = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (p_value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Since the p-value = 0.9466 is greater than 0.05, we <strong>fail to reject</strong> the null hypothesis. We <strong>do not have sufficient evidence</strong> to say that the data <strong>does not come from a normal distribution</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">#let's apply Shapiro-Wilk test to the data named y which is generated from exponential dist.</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the function returns the osberved test statistic and its corresponding p-value.</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>shapiro_stat, p_value <span class="op">=</span> stats.shapiro(y)</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'P-value = </span><span class="sc">%.4f</span><span class="st">'</span> <span class="op">%</span> (p_value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Since the p-value = 0.0000 is less than .05, we <strong>reject</strong> the null hypothesis. We <strong>have sufficient evidence</strong> to say that the data <strong>does not come from a normal distribution</strong>.</p>
+<p>A <strong>note</strong> from <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html?highlight=shapiro#scipy.stats.shapiro">scipy.stats.shapiro</a> says that “For N &gt; 5000 the W test statistic is accurate but the p-value may not be.”</p>
+</section>
+<section id="measures-of-correlation" class="level2">
+<h2 class="anchored" data-anchor-id="measures-of-correlation">Measures of Correlation</h2>
+<ul>
+<li>Correlation describes the <strong>degree</strong> and <strong>direction</strong> of the <strong>linear relationship</strong> between two variables, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</li>
+<li>Let we have a random sample of size <span class="math inline">\(n\)</span> observed on <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> variables where the data pairs are denoted by <span class="math inline">\((x_1,y_1),\ldots,(x_n,y_n)\)</span>, the sample correlation coefficient is defined as:</li>
+</ul>
+<p><span class="math display">\[ r_{xy}=\frac{\sum_{i}^{n}(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\big(\sum_{i}^{n}(x_i-\bar{x})^2\sum_{i}^{n}(y_i-\bar{y})^2\big)}}. \]</span></p>
+<ul>
+<li>The correlation falls between -1 and 1 (<span class="math inline">\(-1 \leq r_{xy} \leq 1\)</span>).</li>
+<li>If <span class="math inline">\(r_{xy} &gt; 0\)</span>, the association is <strong>positive</strong>,</li>
+<li>If <span class="math inline">\(r_{xy} &lt; 0\)</span>, the association is <strong>negative</strong>, and</li>
+<li>If <span class="math inline">\(r_{xy} = 0\)</span>, it indicates <strong>no linear relationship</strong>.</li>
+<li>The <strong>larger</strong> the absolute value <span class="math inline">\(r_{xy}\)</span>, the <strong>stronger</strong> the association.</li>
+</ul>
+<p>Let’s investigate how the scatter plot changes as the correlation changes.</p>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing the necessary libraries</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-whitegrid'</span>)</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>]<span class="op">=</span><span class="dv">14</span>,<span class="dv">6</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="co"># define a corr function with flexible corr input</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> corr_widget(corr <span class="op">=</span> <span class="dv">0</span>):</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Defining the mean vector</span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>    mean_x_y <span class="op">=</span> np.array([<span class="dv">20</span>,<span class="dv">30</span>])</span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Setting sd and corr </span></span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>    sigma_x <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>    sigma_y <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>    corr_x_y <span class="op">=</span> corr</span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Defining the variance-covariance matrix</span></span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a>    cov_x_y <span class="op">=</span> np.array([[sigma_x<span class="op">**</span><span class="dv">2</span>, corr_x_y<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y], [corr_x_y<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y, sigma_y<span class="op">**</span><span class="dv">2</span>]])</span>
+<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generating a data based on bivariate normal distribution</span></span>
+<span id="cb49-24"><a href="#cb49-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># with given mean vector and variance-covariance matrix</span></span>
+<span id="cb49-25"><a href="#cb49-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb49-26"><a href="#cb49-26" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> stats.multivariate_normal.rvs(mean <span class="op">=</span> mean_x_y, cov <span class="op">=</span> cov_x_y, size <span class="op">=</span> <span class="dv">100</span>)</span>
+<span id="cb49-27"><a href="#cb49-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-28"><a href="#cb49-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plotting the generated samples</span></span>
+<span id="cb49-29"><a href="#cb49-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb49-30"><a href="#cb49-30" aria-hidden="true" tabindex="-1"></a>    plt.plot(data[:,<span class="dv">0</span>], data[:,<span class="dv">1</span>], <span class="st">'o'</span>, c <span class="op">=</span> <span class="st">'blue'</span>)</span>
+<span id="cb49-31"><a href="#cb49-31" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="ss">f'Correlation between X and Y = </span><span class="sc">{</span>corr_x_y<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb49-32"><a href="#cb49-32" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'X'</span>)</span>
+<span id="cb49-33"><a href="#cb49-33" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">'Y'</span>)</span>
+<span id="cb49-34"><a href="#cb49-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-35"><a href="#cb49-35" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb49-36"><a href="#cb49-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-37"><a href="#cb49-37" aria-hidden="true" tabindex="-1"></a><span class="co">#turn it into a widget</span></span>
+<span id="cb49-38"><a href="#cb49-38" aria-hidden="true" tabindex="-1"></a>corr_wid <span class="op">=</span> widgets.FloatSlider(<span class="bu">min</span> <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>, <span class="bu">max</span> <span class="op">=</span> <span class="dv">1</span>, step <span class="op">=</span> <span class="fl">0.1</span>, value <span class="op">=</span> <span class="dv">0</span>, description <span class="op">=</span> <span class="st">"$r_x_y$"</span>)</span>
+<span id="cb49-39"><a href="#cb49-39" aria-hidden="true" tabindex="-1"></a><span class="co">#display(corr_wid)    </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, play with the follwing slider to see how correlation changes.</p>
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>widgets.interact(corr_widget, corr <span class="op">=</span> corr_wid)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"dfc052e1e649436fbb3fdaa28de45775","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> session_info</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>session_info.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../lectures/lec_01.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 01</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../labs/Week_01_Eda_02.html" class="pagination-link">
+        <span class="nav-page-text">Lab 02</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">This website is built with <a href="https://quarto.org/"><img src="https://quarto.org/quarto.png" class="img-fluid" alt="Quarto" width="80"></a>.</div>   
+    <div class="nav-footer-right">© Copyright 2022, Gül İnan</div>
+  </div>
+</footer>
+
+
+
+</body></html>
