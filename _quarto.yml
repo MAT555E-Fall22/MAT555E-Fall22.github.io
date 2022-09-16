@@ -7,7 +7,7 @@ website:
 
   page-navigation: true
   title: "MAT555E"
-  description: "Homepage for MAT555E - Statistical Data Analysis for Computational Sciences."
+  description: "Homepage for MAT555E."
   site-url: "https://MAT555E-Fall22.github.io"
    
   repo-url: https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io
