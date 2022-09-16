@@ -6,6 +6,7 @@ freeze: auto
 website:
 
   page-navigation: true
+  reader-mode: true
   title: "MAT555E"
   description: "Homepage for MAT555E."
   site-url: "https://MAT555E-Fall22.github.io"
