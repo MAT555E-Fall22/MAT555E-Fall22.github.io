@@ -40,6 +40,9 @@ At the end of the semester, the students are expected:
 
 </p>
 
+**Course GitHub Organization:** <https://github.com/MAT555E-Fall22>.
+
+
 **Course Prerequisites:**
 
 <p align="justify">
