@@ -104,7 +104,7 @@ Week 15. Final review and examples.
 
 <p align="justify">
 
-A student who completed this course successfully is expected to:
+A student who completed this course successfully is expected:
 
 <ul>
 
@@ -112,9 +112,9 @@ A student who completed this course successfully is expected to:
 
 <li>To be able to identify which method(s) might be suitable for conducting data analysis on specific real life data sets,</li>
 
-<li>Get familiar with Python [Scikit-Learn](https://scikit-learn.org/stable/) library, and</li>
+<li>To get familiar with Python [Scikit-Learn](https://scikit-learn.org/stable/) library, and</li>
 
-<li>Be prepared for more advanced coursework or scientific research in machine learning and related fields.</li>
+<li>To be prepared for more advanced coursework or scientific research in machine learning and related fields.</li>
 
 </ul>
 
@@ -221,7 +221,9 @@ The midterm will be on `November 3rd, 2022 between 17:30-20:30`. The midterm top
 
 <p align="justify">
 
-The group-based paper presentations will be on `December 8th, 2022 between 17:30-20:30`. When the semester starts, I urge you to visit [Proceedings of Machine Learning Research](https://proceedings.mlr.press/) and pick a paper published within nearly past three years (2022, 2021, and 2020) at [AISTATS](https://aistats.org/), [ICML](https://icml.cc/), or [NeurIPS](https://nips.cc/). I would like to hear about papers on `explainable AI (XAI)` a lot, but, feel free to select a topic on your own interest.
+The group-based paper presentations will be on `December 8th, 2022 between 17:30-20:30`.
+
+When the semester starts, I urge you to visit [Proceedings of Machine Learning Research](https://proceedings.mlr.press/) and pick a paper published within nearly past three years (2022, 2021, and 2020) at [AISTATS](https://aistats.org/), [ICML](https://icml.cc/), or [NeurIPS](https://nips.cc/). I would like to hear about papers on `explainable AI (XAI)` a lot, but, feel free to select a topic on your own interest.
 
 I can anticipate that the content of these papers may be very heavy compared to our class topics. However, the main aim of group-based paper presentation (along with a report submission) is to asses whether you are able to read and understand a research problem recently carried out, and suggest an improvement (e.g., mathematical or computational) as an extension of the paper. The group size can be at most 2 and the presentation duration is 30 minutes (25 min. talk + 5 min. Q.A.).
 
