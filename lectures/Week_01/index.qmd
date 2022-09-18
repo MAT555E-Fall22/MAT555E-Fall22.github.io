@@ -26,6 +26,6 @@ format:
 
 ## Lab Materials
 
-- [Exploratory Data Analysis-01](/labs/Week_01/Week_01_Eda_01.html)
-- [Exploratory Data Analysis-02](/labs/Week_01/Week_01_Eda_02.html) 
+- [Exploratory Data Analysis-01](/labs/week_01/Week_01_Eda_01.html)
+- [Exploratory Data Analysis-02](/labs/week_01/Week_01_Eda_02.html) 
 
