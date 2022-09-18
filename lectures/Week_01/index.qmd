@@ -23,8 +23,8 @@ format:
 
 Hello
 
-<embed src="https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_01/Week_01_Intro.pdf" width="100%" height="745px"/>
 
+<https://MAT555E-Fall22.github.io/lectures/Week_01/Week_01_Intro.pdf>
 
 ## Lab Materials
 
