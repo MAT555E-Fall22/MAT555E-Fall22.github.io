@@ -21,7 +21,7 @@ format:
 
 ## Lecture Slides
 
-- [Introduction](https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_01_Intro_pdf)
+- [Introduction](https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_01_Intro.pdf)
  
 ## Lab Materials
 
