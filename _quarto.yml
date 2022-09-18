@@ -39,13 +39,13 @@ website:
           - href: syllabus.qmd
       - section: "**Lecture Materials**"
         contents:
-          - href: lectures/week_01/index.qmd 
+          - href: lectures/Week_01/index.qmd 
       - section: "**Lab Materials**"
         contents:
           - section: "Week 01"
             contents:
-              - href: labs/week_01/Week_01_Eda_01.ipynb  
-              - href: labs/week_01/Week_01_Eda_02.ipynb 
+              - href: labs/Week_01/Week_01_Eda_01.ipynb  
+              - href: labs/Week_01/Week_01_Eda_02.ipynb 
           
           
           
