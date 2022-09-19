@@ -21,13 +21,10 @@ format:
 
 ## Lecture Slides
 
-Hello
-
-
-<https://MAT555E-Fall22.github.io/lectures/Week_01/Week_01_Intro.pdf>
+<object data="https://nbviewer.org/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_01/Week_01_Intro.pdf" width="750" height="600" type='application/pdf'></object>
 
 ## Lab Materials
 
-- [Exploratory Data Analysis-01](/labs/Week_01/Week_01_Eda_01.html)
-- [Exploratory Data Analysis-02](/labs/Week_01/Week_01_Eda_02.html) 
+- [Exploratory Data Analysis-01](https://colab.research.google.com/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_01/Week_01_Eda_01.ipynb)
+- [Exploratory Data Analysis-02](https://colab.research.google.com/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_01/Week_01_Eda_02.ipynb) 
 

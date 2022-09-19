@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://MAT555E-Fall22.github.io/labs/Week_01/Week_01_Eda_01.html</loc>
-    <lastmod>2022-09-18T22:02:27.119Z</lastmod>
-  </url>
-  <url>
-    <loc>https://MAT555E-Fall22.github.io/labs/Week_01/Week_01_Eda_02.html</loc>
-    <lastmod>2022-09-18T22:02:28.168Z</lastmod>
-  </url>
-  <url>
     <loc>https://MAT555E-Fall22.github.io/index.html</loc>
-    <lastmod>2022-09-18T22:02:28.782Z</lastmod>
+    <lastmod>2022-09-19T07:41:22.290Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/instructor.html</loc>
-    <lastmod>2022-09-18T22:02:29.312Z</lastmod>
+    <lastmod>2022-09-19T07:41:22.735Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/syllabus.html</loc>
-    <lastmod>2022-09-18T22:02:30.028Z</lastmod>
+    <lastmod>2022-09-19T07:41:23.706Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_01/index.html</loc>
-    <lastmod>2022-09-18T22:02:30.424Z</lastmod>
+    <lastmod>2022-09-19T07:41:24.282Z</lastmod>
+  </url>
+  <url>
+    <loc>https://MAT555E-Fall22.github.io/lectures/Week_01/Week_01_Eda_01.html</loc>
+    <lastmod>2022-09-19T07:41:25.172Z</lastmod>
+  </url>
+  <url>
+    <loc>https://MAT555E-Fall22.github.io/lectures/Week_01/Week_01_Eda_02.html</loc>
+    <lastmod>2022-09-19T07:41:25.817Z</lastmod>
   </url>
 </urlset>
