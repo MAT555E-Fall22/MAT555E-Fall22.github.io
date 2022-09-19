@@ -239,7 +239,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#visualization" id="toc-visualization" class="nav-link active" data-scroll-target="#visualization">Visualization</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link active" data-scroll-target="#visualization">Visualization</a>
+  <ul class="collapse">
   <li><a href="#tools-for-displaying-single-variables" id="toc-tools-for-displaying-single-variables" class="nav-link" data-scroll-target="#tools-for-displaying-single-variables">Tools for Displaying Single Variables</a>
   <ul class="collapse">
   <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">Histograms</a></li>
@@ -256,6 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#tools-for-displaying-more-than-two-variables" id="toc-tools-for-displaying-more-than-two-variables" class="nav-link" data-scroll-target="#tools-for-displaying-more-than-two-variables">Tools for Displaying More Than Two Variables</a>
   <ul class="collapse">
   <li><a href="#scatterplot-matrix" id="toc-scatterplot-matrix" class="nav-link" data-scroll-target="#scatterplot-matrix">Scatterplot Matrix</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_01/Week_01_Eda_02.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -295,38 +297,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="3" type="1">
 <li>Where possible, certainly for any variable of particular interest-examine <strong>exploratory visualizations</strong>.</li>
 </ol>
-<section id="visualization" class="level2">
-<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
+<section id="visualization" class="level1">
+<h1>Visualization</h1>
 <ul>
 <li>The objective of visualization is to <strong>reveal hidden information</strong> through simple charts and diagrams.</li>
 <li>It is instrumental in <strong>identifying patterns and relationships</strong> among groups of variables.</li>
 <li>Visualization techniques depend on the <strong>type of variables</strong>.</li>
 </ul>
-</section>
 <section id="tools-for-displaying-single-variables" class="level2">
 <h2 class="anchored" data-anchor-id="tools-for-displaying-single-variables">Tools for Displaying Single Variables</h2>
 <section id="histograms" class="level3">
 <h3 class="anchored" data-anchor-id="histograms">Histograms</h3>
 <ul>
-<li>Histograms are the most common graphical tool to <strong>represent continuous data</strong>.</li>
-<li>A histogram divides the data into <strong>bins</strong>, counts the number of data points falling into each bin, and shows the <strong>bins on the horizontal axis</strong> and the <strong>frequency on thevertical axis</strong>.</li>
-<li>The <strong>class width</strong> (bin width) has an impact on the shape of the histogram.</li>
+<li>Histograms are the most common graphical tool to represent <strong>continuous data</strong>.</li>
+<li>A histogram divides the data into <strong>bins</strong>, counts the number of data points falling into each bin, and shows the <strong>bins on the horizontal axis</strong> and the <strong>frequency on the vertical axis</strong>.</li>
+<li>The <strong>bin width</strong> (sometimes called class width) has an impact on the <strong>shape of the histogram</strong>.</li>
 </ul>
-<div class="cell" data-execution_count="40">
+<div class="cell" data-execution_count="153">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#For college_df, produce some histograms for a few of the quantitative variables.</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#change numbers of bins </span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#first import the data into session</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>college_df <span class="op">=</span> pd.read_csv(<span class="st">"datasets/College.csv"</span>, index_col <span class="op">=</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="154">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import the data set in the .csv file into your your current session</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>college_df <span class="op">=</span> pd.read_csv(<span class="st">"https://www.statlearning.com/s/College.csv"</span>, index_col <span class="op">=</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="155">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://matplotlib.org/stable/tutorials/introductory/pyplot.html</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#For college_df, produce some histograms for a few of the quantitative variables.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#change numbers of bins </span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>n_bins <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#the frequency of number applications decreases as magnitude increases</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.hist(college_df[<span class="st">'Apps'</span>], bins <span class="op">=</span> n_bins, color <span class="op">=</span> <span class="st">'red'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'The histogram of number of applications received'</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-4-output-1.png" class="img-fluid"></p>
+</div>
 </div>
 </section>
 <section id="subplotting-with-matplotlib" class="level3">
 <h3 class="anchored" data-anchor-id="subplotting-with-matplotlib">Subplotting with matplotlib</h3>
-<p>Using the College data set, let’s create a <strong>2x2 subplot</strong> with a subplot for each of the following variables:</p>
+<p>Using the College data set, let’s create a <strong>2x2 subplot</strong> with the following variables:</p>
 <ul>
 <li>Apps</li>
 <li>perc.alumni</li>
@@ -334,30 +347,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Expend</li>
 </ul>
 <p>where each subplot is a histogram.</p>
-<div class="cell" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#create subplots</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>figs, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize <span class="op">=</span> (<span class="dv">16</span>,<span class="dv">8</span>)) <span class="co">#figsize: width, height, respectively.</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#axs object is a 2 by 2 numpy array</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#type(axs)</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#axs</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#you can change the number of bins, as you wish</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#could not give y axis title for each subplot</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>n_bins <span class="op">=</span> <span class="dv">50</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#the frequency of number applications decreases as magnitude increases</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>,<span class="dv">0</span>].hist(college_df[<span class="st">'Apps'</span>], bins <span class="op">=</span> n_bins, color <span class="op">=</span> <span class="st">'red'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>,<span class="dv">0</span>].set_title(<span class="st">'The histogram of number of applications received'</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>,<span class="dv">1</span>].hist(college_df[<span class="st">'Accept'</span>], bins <span class="op">=</span> n_bins, color <span class="op">=</span> <span class="st">'green'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>,<span class="dv">1</span>].set_title(<span class="st">'The histogram of number of applications accepted'</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#the distribution of estimated book costs is symmetric. there a few expensive books used at colleges.</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>,<span class="dv">0</span>].hist(college_df[<span class="st">'Books'</span>], bins <span class="op">=</span> n_bins, color <span class="op">=</span> <span class="st">'orange'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>,<span class="dv">0</span>].set_title(<span class="st">'The histogram of estimated book costs'</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>,<span class="dv">1</span>].hist(college_df[<span class="st">'Expend'</span>], bins <span class="op">=</span> n_bins, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>,<span class="dv">1</span>].set_title(<span class="st">'The histogram of instructional expenditure per student'</span>)</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.tight_layout()</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>plt.show(figs) <span class="co">#plt.show() turns off printing the data array etc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="156">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#create subplots with matplotlib</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html?highlight=subplots</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a figure and a set of subplots</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#returns a figure and array of axes</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>figure, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize <span class="op">=</span> (<span class="dv">16</span>,<span class="dv">8</span>)) <span class="co">#figsize: width, height, respectively.</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#axs object is a 2 by 2 numpy array</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#type(axs)</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#axs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Week_01_Eda_02_files/figure-html/cell-4-output-1.png" class="img-fluid"></p>
+<p><img src="Week_01_Eda_02_files/figure-html/cell-5-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="157">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a figure and a set of subplots</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#returns a figure and array of axes</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>figure, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize <span class="op">=</span> (<span class="dv">16</span>,<span class="dv">8</span>)) <span class="co">#figsize: width, height, respectively.</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#fill-in the subplots</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>n_bins <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">##A question: Why not plt hist??</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#the frequency of number applications decreases as magnitude increases</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>,<span class="dv">0</span>].hist(college_df[<span class="st">'Apps'</span>], bins <span class="op">=</span> n_bins, color <span class="op">=</span> <span class="st">'red'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>,<span class="dv">0</span>].set_title(<span class="st">'The histogram of number of applications received'</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>,<span class="dv">1</span>].hist(college_df[<span class="st">'Accept'</span>], bins <span class="op">=</span> n_bins, color <span class="op">=</span> <span class="st">'green'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>,<span class="dv">1</span>].set_title(<span class="st">'The histogram of number of applications accepted'</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">#the distribution of estimated book costs is symmetric. there a few expensive books used at colleges.</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>,<span class="dv">0</span>].hist(college_df[<span class="st">'Books'</span>], bins <span class="op">=</span> n_bins, color <span class="op">=</span> <span class="st">'orange'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>,<span class="dv">0</span>].set_title(<span class="st">'The histogram of estimated book costs'</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>,<span class="dv">1</span>].hist(college_df[<span class="st">'Expend'</span>], bins <span class="op">=</span> n_bins, alpha <span class="op">=</span> <span class="fl">0.5</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>,<span class="dv">1</span>].set_title(<span class="st">'The histogram of instructional expenditure per student'</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>plt.show(figure) <span class="co">#plt.show() turns off printing the data array etc</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">#you can change the number of bins, as you wish</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co">#could not give y axis title for each subplot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-6-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
@@ -371,56 +397,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="histograms-density-plots-with-seaborn" class="level3">
 <h3 class="anchored" data-anchor-id="histograms-density-plots-with-seaborn">Histograms, Density Plots with seaborn</h3>
-<div class="cell" data-execution_count="43">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#draw a histogram with seaborn, kind="hist" is default</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sns.displot(x <span class="op">=</span> college_df.Expend, kind<span class="op">=</span><span class="st">"hist"</span>) </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#draw a denstiy plot with seaborn with kernel density</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>sns.displot(x <span class="op">=</span> college_df.Expend, kind<span class="op">=</span><span class="st">"kde"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#overlay histogram with a density plot </span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>sns.displot(x <span class="op">=</span> college_df.Expend, kde<span class="op">=</span><span class="va">True</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="Week_01_Eda_02_files/figure-html/cell-5-output-1.png" class="img-fluid"></p>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="Week_01_Eda_02_files/figure-html/cell-5-output-2.png" class="img-fluid"></p>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="Week_01_Eda_02_files/figure-html/cell-5-output-3.png" class="img-fluid"></p>
-</div>
-</div>
-</section>
-</section>
-<section id="tools-for-displaying-a-single-variable-with-repect-to-a-categorical-variable" class="level2">
-<h2 class="anchored" data-anchor-id="tools-for-displaying-a-single-variable-with-repect-to-a-categorical-variable">Tools for Displaying a Single Variable with repect to a Categorical Variable</h2>
-<div class="cell" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Each kind of plot can be drawn separately for subsets of data using **hue mapping**</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Investigate how the expenditure is changing with respect to school type</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, hue <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"hist"</span>) </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, hue <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"kde"</span>)<span class="op">;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#as you can see instructional expenditure is  higher in private schools compared to non-private ones</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="Week_01_Eda_02_files/figure-html/cell-6-output-1.png" class="img-fluid"></p>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="Week_01_Eda_02_files/figure-html/cell-6-output-2.png" class="img-fluid"></p>
-</div>
-</div>
-<div class="cell" data-execution_count="45">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#alternatively you can prefer stacked plots</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, hue <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"hist"</span>, multiple <span class="op">=</span> <span class="st">"stack"</span>) </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, hue <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"kde"</span>, multiple <span class="op">=</span> <span class="st">"stack"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="158">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://seaborn.pydata.org/generated/seaborn.displot.html</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#no submodule</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#draw a histogram with seaborn, kind="hist" is default</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>sns.displot(x <span class="op">=</span> college_df.Expend, kind <span class="op">=</span> <span class="st">"hist"</span>) </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#draw a denstiy plot with seaborn with kernel density</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>sns.displot(x <span class="op">=</span> college_df.Expend, kind <span class="op">=</span> <span class="st">"kde"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#overlay histogram with a density plot </span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>sns.displot(x <span class="op">=</span> college_df.Expend, kde <span class="op">=</span> <span class="va">True</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="Week_01_Eda_02_files/figure-html/cell-7-output-1.png" class="img-fluid"></p>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="Week_01_Eda_02_files/figure-html/cell-7-output-2.png" class="img-fluid"></p>
 </div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-7-output-3.png" class="img-fluid"></p>
 </div>
-<div class="cell" data-execution_count="46">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#faceting, map the expenditure variable into private variable with col argument</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, col <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"hist"</span>) </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, col <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"kde"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="tools-for-displaying-a-single-variable-with-repect-to-a-categorical-variable" class="level2">
+<h2 class="anchored" data-anchor-id="tools-for-displaying-a-single-variable-with-repect-to-a-categorical-variable">Tools for Displaying a Single Variable with repect to a Categorical Variable</h2>
+<div class="cell" data-execution_count="159">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Each type of plot can be drawn separately for subsets of data using **hue mapping**</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Investigate how expenditure is changing with respect to school type</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, hue <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"hist"</span>) </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, hue <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"kde"</span>)<span class="op">;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#as you can see instructional expenditure is  higher in private schools compared to non-private ones</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="Week_01_Eda_02_files/figure-html/cell-8-output-1.png" class="img-fluid"></p>
 </div>
@@ -428,53 +434,228 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="Week_01_Eda_02_files/figure-html/cell-8-output-2.png" class="img-fluid"></p>
 </div>
 </div>
-<section id="boxplots" class="level3">
-<h3 class="anchored" data-anchor-id="boxplots">Boxplots</h3>
-<ul>
-<li>Boxplots are used to describe the shape of data distribution.</li>
-<li>We can also use the boxplots the to describe the shape of data distribution with respect to the levels of a categorical variable.</li>
-<li>It also enables us to identify outliers where an observation is considered as an outlier if it is either less than Q1 - 1.5 IQR or greater than Q3 + 1.5 IQR, with IQR = Q3 - Q1.</li>
-<li>This rule is conservative and often too many points are identified as outliers. Hence sometimes only those points outside of [Q1 - 3 IQR, Q3 + 3 IQR] are only identified as outliers.</li>
-</ul>
-<p>Using the College data set, we will create a new <strong>categorical variabl</strong>e, called <code>Elite</code>, by binning the <code>Top10perc</code> variable. We are going to divide universities into two groups based on whether or not the proportion of students coming from the top 10% of their high school classes exceeds 50%.</p>
-<div class="cell" data-execution_count="47">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#attach a new column to the college df</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>college_df <span class="op">=</span> pd.read_csv(<span class="st">"datasets/College.csv"</span>, index_col <span class="op">=</span> <span class="dv">0</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#this should be much more smarter.</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#i tried boolean indexing below, but it worked first, but,</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#it did not work later.</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#college_df['Elite'] = "No"</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#college_df.Elite[college_df.Top10perc&gt;50] = "Yes"</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#alternatively, a bit longer way to add a new column to a data frame</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>elite <span class="op">=</span> []</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> college_df[<span class="st">'Top10perc'</span>]:</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> i <span class="op">&gt;</span> <span class="dv">50</span> :    elite.append(<span class="st">'Yes'</span>)</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:          elite.append(<span class="st">'No'</span>)</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">'Elite'</span>] <span class="op">=</span> elite </span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">#college_df.head()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="160">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#alternatively you can prefer stacked plots</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, hue <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"hist"</span>, multiple <span class="op">=</span> <span class="st">"stack"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-9-output-1.png" class="img-fluid"></p>
 </div>
-<div class="cell" data-execution_count="48">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#compare the graduation rates with respect to school's elite status</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Elite"</span>, y <span class="op">=</span> <span class="st">"Grad.Rate"</span>)<span class="op">;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#as you can see in the elite schools, the graduate rate is higher compared to non-elite ones</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#we can see a few outliers in the non-elite schools. while graduation rate is</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#very high in some non-elite schools, graduation rate is very low in some non-elite schools</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="161">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#faceting, map the expenditure variable into private variable with col argument</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, col <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"hist"</span>) </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>sns.displot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Expend"</span>, col <span class="op">=</span> <span class="st">"Private"</span>, kind <span class="op">=</span> <span class="st">"kde"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="Week_01_Eda_02_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
 </div>
-</div>
-<div class="cell" data-execution_count="49">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># produce side-by-side boxplots of Outstate versus Private.</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Private"</span>, y <span class="op">=</span> <span class="st">"Outstate"</span>)<span class="op">;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#as you can see in private schools, out-state tution fees are also very high.</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#if you born in Arizona, but, want to study in a private school, such as in Boston,</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#you are more likely to pay for higher tution rates.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Week_01_Eda_02_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
+<p><img src="Week_01_Eda_02_files/figure-html/cell-10-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<section id="boxplots" class="level3">
+<h3 class="anchored" data-anchor-id="boxplots">Boxplots</h3>
+<ul>
+<li>Boxplots are used to <strong>describe the shape of data distribution</strong>.</li>
+<li>We can also use the boxplots to describe the shape of data distribution with respect to the levels of a categorical variable.</li>
+<li>It also enables us to <strong>identify outliers</strong> where an observation is considered as an outlier if it is either less than Q1 - 1.5 IQR or greater than Q3 + 1.5 IQR, with IQR = Q3 - Q1.</li>
+<li>This rule is conservative and often too many points are identified as outliers. Hence sometimes only those points outside of [Q1 - 3 IQR, Q3 + 3 IQR] are only identified as outliers.</li>
+</ul>
+<p>Using the College data set, we will create a new <strong>categorical variabl</strong>e, called <code>Elite</code>, by binning the <code>Top10perc</code> variable. We are going to divide universities into two groups based on whether or not the proportion of students coming from the top 10% of their high school classes exceeds 50%.</p>
+<div class="cell" data-execution_count="162">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#attach a new column to the college df</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>college_df <span class="op">=</span> pd.read_csv(<span class="st">"https://www.statlearning.com/s/College.csv"</span>, index_col <span class="op">=</span> <span class="dv">0</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#this should be much more smarter.</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#i tried boolean indexing below, but it worked first, but,</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#it did not work later.</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">'Elite'</span>] <span class="op">=</span> <span class="st">"No"</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>college_df.Elite[college_df.Top10perc<span class="op">&gt;</span><span class="dv">50</span>] <span class="op">=</span> <span class="st">"Yes"</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">#alternatively, a bit longer way to add a new column to a data frame</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">#elite = []</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">#for i in college_df['Top10perc']:</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">#        if i &gt; 50 :    elite.append('Yes')</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">#        else:          elite.append('No')</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co">#college_df['Elite'] = elite </span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>college_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="162">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Private</th>
+      <th>Apps</th>
+      <th>Accept</th>
+      <th>Enroll</th>
+      <th>Top10perc</th>
+      <th>Top25perc</th>
+      <th>F.Undergrad</th>
+      <th>P.Undergrad</th>
+      <th>Outstate</th>
+      <th>Room.Board</th>
+      <th>Books</th>
+      <th>Personal</th>
+      <th>PhD</th>
+      <th>Terminal</th>
+      <th>S.F.Ratio</th>
+      <th>perc.alumni</th>
+      <th>Expend</th>
+      <th>Grad.Rate</th>
+      <th>Elite</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Abilene Christian University</th>
+      <td>Yes</td>
+      <td>1660</td>
+      <td>1232</td>
+      <td>721</td>
+      <td>23</td>
+      <td>52</td>
+      <td>2885</td>
+      <td>537</td>
+      <td>7440</td>
+      <td>3300</td>
+      <td>450</td>
+      <td>2200</td>
+      <td>70</td>
+      <td>78</td>
+      <td>18.1</td>
+      <td>12</td>
+      <td>7041</td>
+      <td>60</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>Adelphi University</th>
+      <td>Yes</td>
+      <td>2186</td>
+      <td>1924</td>
+      <td>512</td>
+      <td>16</td>
+      <td>29</td>
+      <td>2683</td>
+      <td>1227</td>
+      <td>12280</td>
+      <td>6450</td>
+      <td>750</td>
+      <td>1500</td>
+      <td>29</td>
+      <td>30</td>
+      <td>12.2</td>
+      <td>16</td>
+      <td>10527</td>
+      <td>56</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>Adrian College</th>
+      <td>Yes</td>
+      <td>1428</td>
+      <td>1097</td>
+      <td>336</td>
+      <td>22</td>
+      <td>50</td>
+      <td>1036</td>
+      <td>99</td>
+      <td>11250</td>
+      <td>3750</td>
+      <td>400</td>
+      <td>1165</td>
+      <td>53</td>
+      <td>66</td>
+      <td>12.9</td>
+      <td>30</td>
+      <td>8735</td>
+      <td>54</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>Agnes Scott College</th>
+      <td>Yes</td>
+      <td>417</td>
+      <td>349</td>
+      <td>137</td>
+      <td>60</td>
+      <td>89</td>
+      <td>510</td>
+      <td>63</td>
+      <td>12960</td>
+      <td>5450</td>
+      <td>450</td>
+      <td>875</td>
+      <td>92</td>
+      <td>97</td>
+      <td>7.7</td>
+      <td>37</td>
+      <td>19016</td>
+      <td>59</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>Alaska Pacific University</th>
+      <td>Yes</td>
+      <td>193</td>
+      <td>146</td>
+      <td>55</td>
+      <td>16</td>
+      <td>44</td>
+      <td>249</td>
+      <td>869</td>
+      <td>7560</td>
+      <td>4120</td>
+      <td>800</td>
+      <td>1500</td>
+      <td>76</td>
+      <td>72</td>
+      <td>11.9</td>
+      <td>2</td>
+      <td>10922</td>
+      <td>15</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="163">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://seaborn.pydata.org/generated/seaborn.boxplot.html</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#compare the graduation rates with respect to school's elite status</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Elite"</span>, y <span class="op">=</span> <span class="st">"Grad.Rate"</span>)<span class="op">;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#vertical box-plot</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#as you can see in the elite schools, the graduate rate is higher compared to non-elite ones</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#we can see a few outliers in the non-elite schools. while graduation rate is</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#very high in some non-elite schools, graduation rate is very low in some non-elite schools</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="164">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#this is an example that column names should not involve .</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#college_df.Grad.Rate.max()#will not work</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#hmmm</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>college_df[<span class="st">"Grad.Rate"</span>].<span class="bu">max</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="164">
+<pre><code>118</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="165">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#produce side-by-side boxplots of Outstate versus Private.</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#horizontal box-plot</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Outstate"</span>, y <span class="op">=</span> <span class="st">"Private"</span>)<span class="op">;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#as you can see in private schools, out-state tution fees are also very high.</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#if you born in Arizona, but, want to study in a private school, such as in Boston,</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#you are more likely to pay for higher tution rates.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Week_01_Eda_02_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
@@ -485,22 +666,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="scatterplot" class="level2">
 <h2 class="anchored" data-anchor-id="scatterplot">Scatterplot</h2>
 <ul>
-<li>The most conventional way to display relationships between two variables is a scatterplot.</li>
-<li>It shows the direction and strength of association between two variables.</li>
+<li>The most conventional way to display relationships between two variables is a <strong>scatterplot</strong>.</li>
+<li>It shows the <strong>direction</strong> and <strong>strength</strong> of association between two variables.</li>
 </ul>
-<div class="cell" data-execution_count="50">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get a scatter plot of outstat tution fee and graduation rate</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Outstate"</span>, y <span class="op">=</span> <span class="st">"Grad.Rate"</span>)<span class="op">;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#As tuition fee increases, the high graduation rate increases</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="166">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://seaborn.pydata.org/generated/seaborn.scatterplot.html</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#get a scatter plot of out of state tution fee and graduation rate</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">"Outstate"</span>, y <span class="op">=</span> <span class="st">"Grad.Rate"</span>)<span class="op">;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#As tuition fee increases, the high graduation rate increases</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Week_01_Eda_02_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
+<p><img src="Week_01_Eda_02_files/figure-html/cell-15-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="51">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#how above graph chages with respect to school type?</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">'Outstate'</span>, y <span class="op">=</span> <span class="st">"Grad.Rate"</span>, hue <span class="op">=</span> <span class="st">'Private'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="167">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#how graph above chages with respect to school type?</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> college_df, x <span class="op">=</span> <span class="st">'Outstate'</span>, y <span class="op">=</span> <span class="st">"Grad.Rate"</span>, hue <span class="op">=</span> <span class="st">'Private'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Week_01_Eda_02_files/figure-html/cell-13-output-1.png" class="img-fluid"></p>
+<p><img src="Week_01_Eda_02_files/figure-html/cell-16-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
@@ -512,19 +694,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Displaying more than two variables on a single scatterplot is not possible.</li>
 <li>A <strong>scatterplot matrix</strong> is one possible visualization of three or more continuous variables taken two at a time.</li>
 </ul>
-<div class="cell" data-execution_count="52">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#let's get a pairwise matrix plot of some variables. </span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#diag_kind = None, otherwise histogram appears on the diagonals.</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>sns.pairplot(college_df, <span class="bu">vars</span> <span class="op">=</span> [<span class="st">'Outstate'</span>, <span class="st">'Grad.Rate'</span>, <span class="st">'Personal'</span>], diag_kind <span class="op">=</span> <span class="va">None</span>, hue <span class="op">=</span> <span class="st">'Private'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="168">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://seaborn.pydata.org/generated/seaborn.pairplot.html</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">#let's get a pairwise matrix plot of some variables. </span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#diag_kind = None, otherwise histogram appears on the diagonals.</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>sns.pairplot(college_df, <span class="bu">vars</span> <span class="op">=</span> [<span class="st">'Outstate'</span>, <span class="st">'Grad.Rate'</span>, <span class="st">'Personal'</span>], diag_kind <span class="op">=</span> <span class="va">None</span>, hue <span class="op">=</span> <span class="st">'Private'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Week_01_Eda_02_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
+<p><img src="Week_01_Eda_02_files/figure-html/cell-17-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="53">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> college_df[[<span class="st">'Outstate'</span>, <span class="st">'Grad.Rate'</span>, <span class="st">'Personal'</span>]]</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>df.corr()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="53">
+<div class="cell" data-execution_count="169">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> college_df[[<span class="st">'Outstate'</span>, <span class="st">'Grad.Rate'</span>, <span class="st">'Personal'</span>]]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>df.corr()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="169">
 
 <div>
 
@@ -561,10 +744,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="54">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> session_info</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>session_info.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="54">
+<div class="cell" data-execution_count="170">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> session_info</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>session_info.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="170">
 <details>
 <summary>Click to view session information</summary>
 <pre>-----
@@ -663,13 +846,14 @@ notebook            6.4.4
 Python 3.8.12 | packaged by conda-forge | (default, Sep 16 2021, 01:59:00) [Clang 11.1.0 ]
 macOS-10.15.7-x86_64-i386-64bit
 -----
-Session information updated at 2022-09-17 01:22
+Session information updated at 2022-09-20 00:03
 </pre>
 </details>
 </div>
 </div>
 
 
+</section>
 </section>
 </section>
 
