@@ -1,7 +1,7 @@
 ---
-title: "Week 01"
+title: "Week 02"
 author: "Gül İnan"
-date: "September 20, 2022"
+date: "September 27, 2022"
 comments:
   hypothesis: 
     theme: clean
@@ -22,8 +22,8 @@ format:
 - Implementing a simple linear regression model with Python [statsmodels](https://www.statsmodels.org/stable/index.html) library
 
 ## Lecture Slides
-- Will be updated soon.
-<object data="https://nbviewer.org/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_01/Week_01_Intro.pdf" width="750" height="600" type='application/pdf'></object>
+- can be updated after the lecture on tuesday.
+<object data="https://nbviewer.org/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_Intro_SLR.pdf" width="750" height="600" type='application/pdf'></object>
 
 ## Lab Materials
 
