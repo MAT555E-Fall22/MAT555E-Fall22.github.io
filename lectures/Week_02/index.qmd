@@ -27,6 +27,6 @@ format:
 
 ## Lab Materials
 
-- [Exploratory Data Analysis-01](https://colab.research.google.com/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_Sampling_dist.ipynb)
-- [Exploratory Data Analysis-02](https://colab.research.google.com/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_SLR.ipynb) 
+- [The sampling distribution of OLS estimators](https://colab.research.google.com/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_Sampling_dist.ipynb)
+- [Simple Linear Regression Analysis](https://colab.research.google.com/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_SLR.ipynb) 
 
