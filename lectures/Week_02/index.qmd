@@ -1,0 +1,32 @@
+---
+title: "Week 01"
+author: "Gül İnan"
+date: "September 20, 2022"
+comments:
+  hypothesis: 
+    theme: clean
+execute: 
+  enabled: true
+  warning: false
+  error: false
+format: 
+  html:
+    code-fold: false
+---
+
+## Learning Objectives
+
+- Introduction simple linear regression
+- Least-squares estimation
+- Building a simple linear regression model 
+- Implementing a simple linear regression model with Python [statsmodels](https://www.statsmodels.org/stable/index.html) library
+
+## Lecture Slides
+- Will be updated soon.
+<object data="https://nbviewer.org/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_01/Week_01_Intro.pdf" width="750" height="600" type='application/pdf'></object>
+
+## Lab Materials
+
+- [Exploratory Data Analysis-01](https://colab.research.google.com/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_Sampling_dist.ipynb)
+- [Exploratory Data Analysis-02](https://colab.research.google.com/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_SLR.ipynb) 
+
