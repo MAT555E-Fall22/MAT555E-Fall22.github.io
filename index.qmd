@@ -52,7 +52,7 @@ Since the course also touches on the mathematical and statistical theory behind 
 
 <li>Knowledge of linear algebra, probability, statistics, and optimization,</li>
 
-<li>Familiarity with Python's [Numpy](https://numpy.org/), [Pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/), , [statsmodels](https://www.statsmodels.org/stable/index.html), and [Scikit-Learn](https://scikit-learn.org/stable/) libraries,</li>
+<li>Familiarity with Python's [Numpy](https://numpy.org/), [Pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/), [statsmodels](https://www.statsmodels.org/stable/index.html), and [Scikit-Learn](https://scikit-learn.org/stable/) libraries,</li>
 
 <li>Familiarity with at least one computational document such as [Jupyter Notebook](https://jupyter.org/), [Google Colab](https://colab.research.google.com/), [Visual Studio Code](https://code.visualstudio.com/), or [RStudio Quarto](https://quarto.org/), and</li>
 
@@ -65,3 +65,7 @@ Since the course also touches on the mathematical and statistical theory behind 
 **Class Schedule:**
 
 `CRN 14267:` Tuesdays between 14:30-17:30 at **OBL3** (Computer Lab).
+
+::: callout-important
+**GitHub Classroom link for in-class activities:** <https://classroom.github.com/a/Wm3Zp3fj>
+:::
