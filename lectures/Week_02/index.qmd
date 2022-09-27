@@ -23,7 +23,7 @@ format:
 
 ## Lecture Slides
 
-<object data="https://nbviewer.org/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_Intro_SLR.pdf" width="750" height="600" type='application/pdf'></object>
+<object data="https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_Intro_SLR.pdf" width="750" height="600" type='application/pdf'></object>
 
 ## Lab Materials
 
