@@ -22,7 +22,7 @@ format:
 - Implementing a simple linear regression model with Python [statsmodels](https://www.statsmodels.org/stable/index.html) library
 
 ## Lecture Slides
-- can be updated after the lecture on tuesday.
+
 <object data="https://nbviewer.org/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_Intro_SLR.pdf" width="750" height="600" type='application/pdf'></object>
 
 ## Lab Materials
