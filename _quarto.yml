@@ -13,7 +13,6 @@ website:
    
   repo-url: https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io
   repo-actions: [edit, issue] 
-  google-analytics: "G-1J15E8G5YR"
   
   page-footer:
     left: |
