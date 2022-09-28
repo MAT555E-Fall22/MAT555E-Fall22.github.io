@@ -61,7 +61,7 @@ Since the course also touches on the mathematical and statistical theory behind 
 
 <li>Familiarity with at least one computational document such as [Jupyter Notebook](https://jupyter.org/), [Google Colab](https://colab.research.google.com/), [Visual Studio Code](https://code.visualstudio.com/), or [RStudio Quarto](https://quarto.org/), and</li>
 
-<li>Familiarity with [Git](https://git-scm.com/) and [GitHub](https://github.com/) commands.</li>
+<li>Familiarity with [Git](https://git-scm.com/) commands and [GitHub](https://github.com/) interface.</li>
 
 </ul>
 
