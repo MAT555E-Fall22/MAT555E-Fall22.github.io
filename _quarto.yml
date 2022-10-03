@@ -41,6 +41,7 @@ website:
         contents:
           - href: lectures/Week_01/index.qmd
           - href: lectures/Week_02/index.qmd  
+          - href: lectures/Week_03/index.qmd  
       - section: "**Lab Materials**"
         contents:
           - section: "Week 01"
