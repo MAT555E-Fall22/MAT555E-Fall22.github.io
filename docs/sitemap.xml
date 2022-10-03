@@ -2,38 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://MAT555E-Fall22.github.io/index.html</loc>
-    <lastmod>2022-10-03T18:33:05.428Z</lastmod>
+    <lastmod>2022-10-03T18:40:10.782Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/instructor.html</loc>
-    <lastmod>2022-10-03T18:33:06.030Z</lastmod>
+    <lastmod>2022-10-03T18:40:11.337Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/syllabus.html</loc>
-    <lastmod>2022-10-03T18:33:06.984Z</lastmod>
+    <lastmod>2022-10-03T18:40:12.180Z</lastmod>
+  </url>
+  <url>
+    <loc>https://MAT555E-Fall22.github.io/lectures/Week_03/Week_03_MLR.html</loc>
+    <lastmod>2022-10-03T18:40:12.957Z</lastmod>
+  </url>
+  <url>
+    <loc>https://MAT555E-Fall22.github.io/lectures/Week_03/index.html</loc>
+    <lastmod>2022-10-03T18:40:13.423Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_02/index.html</loc>
-    <lastmod>2022-10-03T18:33:08.319Z</lastmod>
+    <lastmod>2022-10-03T18:40:13.863Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_02/Week_02_SLR.html</loc>
-    <lastmod>2022-10-03T18:33:08.981Z</lastmod>
+    <lastmod>2022-10-03T18:40:14.378Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_02/Week_02_Sampling_dist.html</loc>
-    <lastmod>2022-10-03T18:33:09.502Z</lastmod>
+    <lastmod>2022-10-03T18:40:14.855Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_01/index.html</loc>
-    <lastmod>2022-10-03T18:33:09.960Z</lastmod>
+    <lastmod>2022-10-03T18:40:15.314Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_01/Week_01_Eda_01.html</loc>
-    <lastmod>2022-10-03T18:33:10.919Z</lastmod>
+    <lastmod>2022-10-03T18:40:16.155Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_01/Week_01_Eda_02.html</loc>
-    <lastmod>2022-10-03T18:33:11.710Z</lastmod>
+    <lastmod>2022-10-03T18:40:17.029Z</lastmod>
   </url>
 </urlset>

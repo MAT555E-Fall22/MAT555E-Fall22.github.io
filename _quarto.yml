@@ -51,7 +51,9 @@ website:
             contents:
               - href: lectures/Week_02/Week_02_Sampling_dist.ipynb 
               - href: lectures/Week_02/Week_02_SLR.ipynb
-          
+          - section: "Week 03"
+            contents:
+              - href: lectures/Week_03/Week_03_MLR.ipynb
           
           
           

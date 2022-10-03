@@ -1,0 +1,35 @@
+---
+title: "Week 02"
+author: "Gül İnan"
+date: "October 04, 2022"
+comments:
+  hypothesis: 
+    theme: clean
+execute: 
+  enabled: true
+  warning: false
+  error: false
+format: 
+  html:
+    code-fold: false
+---
+
+## Learning Objectives
+
+-   Introduction to multiple linear regression
+-   Least-squares estimation
+-   Statistical tests
+-   Model selection criteria
+-   Implementing a multiple linear regression model with Python [statsmodels](https://www.statsmodels.org/stable/index.html) library
+
+## Lecture Slides
+
+- can be updated after the class
+
+<object data="https://nbviewer.org/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_03/Week_03_Intro_MLR.pdf" width="750" height="600" type='application/pdf'></object>
+
+
+## Lab Materials
+
+- [Multiple Linear Regression Analysis](https://colab.research.google.com/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_03/Week_03_MLR.ipynb) 
+
