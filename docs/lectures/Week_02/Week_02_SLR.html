@@ -266,7 +266,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#example" id="toc-example" class="nav-link active" data-scroll-target="#example">Example</a></li>
-  <li><a href="#interpretation-of-the-output" id="toc-interpretation-of-the-output" class="nav-link" data-scroll-target="#interpretation-of-the-output">Interpretation of the output</a></li>
+  <li><a href="#interpretation-of-the-output" id="toc-interpretation-of-the-output" class="nav-link" data-scroll-target="#interpretation-of-the-output">Interpretation of the output</a>
+  <ul class="collapse">
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_SLR.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -305,11 +308,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="example" class="level2">
 <h2 class="anchored" data-anchor-id="example">Example</h2>
 <p>In a study the association between advertising and sales of a particular product is being investigated. The <a href="https://www.statlearning.com/resources-second-edition">advertising</a> data set consists of <code>sales</code> of that product in 200 different markets, along with advertising budgets for the product in each of those markets for three different media: <code>TV</code>, <code>radio</code>, and <code>newspaper</code>.</p>
-<div class="cell" data-execution_count="37">
+<div class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="38">
+<div class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import required libraries</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -317,12 +320,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="39">
+<div class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import the data set in the .csv file into your your current session</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>advertise_df <span class="op">=</span> pd.read_csv(<span class="st">"https://www.statlearning.com/s/Advertising.csv"</span>, index_col <span class="op">=</span> <span class="dv">0</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#index_col = column(s) to use as the row labels</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>advertise_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
+<div class="cell-output cell-output-display" data-execution_count="35">
 
 <div>
 
@@ -377,7 +380,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="40">
+<div class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get a scatter plot of advertising budget in TV, radio, and newspaper vs sales, respectively.</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, sharex<span class="op">=</span><span class="va">False</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sns.regplot(ax<span class="op">=</span>axes[<span class="dv">0</span>], x <span class="op">=</span> advertise_df.TV, y <span class="op">=</span> advertise_df.sales, ci <span class="op">=</span> <span class="va">None</span>)</span>
@@ -390,7 +393,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The plot displays <strong>sales, in thousands of units</strong>, as a function of <strong>TV</strong>, radio, and newspaper budgets, <strong>in thousands of dollars</strong>, for 200 different markets. There exists a pretyy strong linear relationship between advertising budget in TV and sales. The lineartiy in other variables can be achieved via transformation etc.</p>
 <p>Since there exists approximately a linear relationthip between the TV and sales, let’s build a simple linear through regressing sales (Y) on TV advertising (X) as follows:</p>
 <p><span class="math display">\[sales_i = \beta_0 +  \beta_1 *TV_i + \epsilon_i \quad\]</span> for <span class="math inline">\(i=1,2,\ldots,200\)</span>, where <span class="math inline">\(\epsilon_i \sim N(0,\sigma^2)\)</span>.</p>
-<div class="cell" data-execution_count="41">
+<div class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get predictor and response</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> advertise_df.TV</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> advertise_df.sales</span>
@@ -398,19 +401,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the intercept to the design matrix</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X) </span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(Y, X).fit()</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> model.predict(X) </span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>print_model <span class="op">=</span> model.summary()</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(print_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#https://www.statsmodels.org/dev/generated/statsmodels.regression.linear_model.OLS.fit.html#statsmodels.regression.linear_model.OLS.fit</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Describe model</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(Y, X) </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Fit model and return results object</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> model.fit() </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">#https://www.statsmodels.org/dev/generated/statsmodels.regression.linear_model.RegressionResults.html#statsmodels.regression.linear_model.RegressionResults</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">#Based on the results, get predictions</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> results.predict(X) </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Get the results summary</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>print_model <span class="op">=</span> results.summary()</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(print_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
 Dep. Variable:                  sales   R-squared:                       0.612
 Model:                            OLS   Adj. R-squared:                  0.610
 Method:                 Least Squares   F-statistic:                     312.1
-Date:                Sun, 25 Sep 2022   Prob (F-statistic):           1.47e-42
-Time:                        22:31:12   Log-Likelihood:                -519.05
+Date:                Sat, 01 Oct 2022   Prob (F-statistic):           1.47e-42
+Time:                        20:57:29   Log-Likelihood:                -519.05
 No. Observations:                 200   AIC:                             1042.
 Df Residuals:                     198   BIC:                             1049.
 Df Model:                           1                                         
@@ -459,7 +468,7 @@ Notes:
 <li>A <span class="math inline">\(95\%\)</span> confidence interval for <span class="math inline">\(\beta_0\)</span> is <span class="math inline">\([6.130,7.935]\)</span>. We are <span class="math inline">\(95\%\)</span> confident that true value of <span class="math inline">\(\beta_1\)</span> is between 6.130 and 7.935. We can conclude that in the absence of any advertising, sales will, on average, fall somewhere betwen 6.130 and 7.935 units.</li>
 </ul></li>
 </ul>
-<div class="cell" data-execution_count="42">
+<div class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rse <span class="op">=</span> np.sqrt(<span class="bu">sum</span>((predictions<span class="op">-</span>Y)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="bu">len</span>(Y)<span class="op">-</span><span class="dv">2</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rse.<span class="bu">round</span>(<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -470,12 +479,124 @@ Notes:
 <li>RSE = 3.2587 tells us that any prediction of sales on the basis of TV advertising would be off by about 3,2587 units. Whether or not this prediction error is acceptable totally depends on the problem context.</li>
 <li>R-squared = 0.612 tells us that <span class="math inline">\(61.2\%\)</span> of variation in sales is accounted for by a linear relationship with the advertising budget spent on TV media.</li>
 </ul>
-<div class="cell">
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<p>James, G., Witten, D., Hastie, T., and Tibshirani, R. (2021). <a href="https://www.statlearning.com/">An Introduction to Statistical Learning: With Applications in R</a>. New York: Springer.</p>
+<div class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> session_info</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>session_info.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<details>
+<summary>Click to view session information</summary>
+<pre>-----
+matplotlib          3.4.3
+numpy               1.21.2
+pandas              1.3.3
+seaborn             0.11.2
+session_info        1.0.0
+statsmodels         0.13.2
+-----
+</pre>
+<details>
+<summary>Click to view modules imported as dependencies</summary>
+<pre>PIL                         8.3.2
+anyio                       NA
+appnope                     0.1.2
+attr                        21.2.0
+babel                       2.9.1
+backcall                    0.2.0
+beta_ufunc                  NA
+binom_ufunc                 NA
+brotli                      1.0.9
+certifi                     2021.05.30
+cffi                        1.14.6
+chardet                     4.0.0
+charset_normalizer          2.0.0
+colorama                    0.4.4
+cycler                      0.10.0
+cython_runtime              NA
+dateutil                    2.8.2
+debugpy                     1.4.1
+decorator                   5.1.0
+defusedxml                  0.7.1
+entrypoints                 0.3
+google                      NA
+idna                        3.1
+ipykernel                   6.4.1
+ipython_genutils            0.2.0
+ipywidgets                  7.6.5
+jedi                        0.18.0
+jinja2                      3.0.1
+joblib                      1.1.0
+json5                       NA
+jsonschema                  3.2.0
+jupyter_server              1.11.0
+jupyterlab_server           2.8.1
+kiwisolver                  1.3.2
+lz4                         4.0.0
+markupsafe                  2.0.1
+matplotlib_inline           NA
+mpl_toolkits                NA
+nbclassic                   NA
+nbformat                    5.1.3
+nbinom_ufunc                NA
+packaging                   21.3
+parso                       0.8.2
+patsy                       0.5.2
+pexpect                     4.8.0
+pickleshare                 0.7.5
+pkg_resources               NA
+prometheus_client           NA
+prompt_toolkit              3.0.20
+ptyprocess                  0.7.0
+pvectorc                    NA
+pydev_ipython               NA
+pydevconsole                NA
+pydevd                      2.4.1
+pydevd_concurrency_analyser NA
+pydevd_file_utils           NA
+pydevd_plugins              NA
+pydevd_tracing              NA
+pygments                    2.10.0
+pyparsing                   2.4.7
+pyrsistent                  NA
+pytz                        2021.1
+requests                    2.26.0
+scipy                       1.7.1
+send2trash                  NA
+six                         1.16.0
+sniffio                     1.2.0
+socks                       1.7.1
+storemagic                  NA
+terminado                   0.12.1
+tornado                     6.1
+traitlets                   5.1.0
+typing_extensions           NA
+uritemplate                 4.1.1
+urllib3                     1.26.7
+wcwidth                     0.2.5
+websocket                   0.57.0
+zmq                         22.3.0
+</pre>
+</details> <!-- seems like this ends pre, so might as well be explicit -->
+<pre>-----
+IPython             7.27.0
+jupyter_client      7.0.3
+jupyter_core        4.8.1
+jupyterlab          3.1.12
+notebook            6.4.4
+-----
+Python 3.8.12 | packaged by conda-forge | (default, Sep 16 2021, 01:59:00) [Clang 11.1.0 ]
+macOS-10.15.7-x86_64-i386-64bit
+-----
+Session information updated at 2022-10-01 20:57
+</pre>
+</details>
+</div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
