@@ -24,8 +24,6 @@ format:
 
 ## Lecture Slides
 
-- can be updated after the class
-
 <object data="https://nbviewer.org/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_03/Week_03_Intro_MLR.pdf" width="750" height="600" type='application/pdf'></object>
 
 
