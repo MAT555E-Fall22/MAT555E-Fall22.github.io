@@ -325,22 +325,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="revisit--advertising-data-example" class="level2">
 <h2 class="anchored" data-anchor-id="revisit--advertising-data-example">Revisit- Advertising Data Example</h2>
 <p>In a study the association between advertising and sales of a particular product is being investigated. The <a href="https://www.statlearning.com/resources-second-edition">advertising</a> data set consists of <code>sales</code> of that product in 200 different markets, along with advertising budgets for the product in each of those markets for three different media: <code>TV</code>, <code>radio</code>, and <code>newspaper</code>.</p>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import required libraries</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import the data set in the .csv file into your your current session</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>advertise_df <span class="op">=</span> pd.read_csv(<span class="st">"https://www.statlearning.com/s/Advertising.csv"</span>, index_col <span class="op">=</span> <span class="dv">0</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#index_col = column(s) to use as the row labels</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>advertise_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="4">
 
 <div>
 
@@ -395,7 +395,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We will fit three individual SLR and one MLR</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange the Y and X matrices for each case, respectively.</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the common response</span></span>
@@ -414,7 +414,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>X_full <span class="op">=</span> sm.add_constant(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Last week, we have investigated the <strong>relationship between sales and TV advertising</strong>.</p>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://www.statsmodels.org/dev/generated/statsmodels.regression.linear_model.OLS.html</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#class statsmodels.regression.linear_model.OLS</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#https://www.statsmodels.org/dev/generated/statsmodels.regression.linear_model.OLS.fit.html</span></span>
@@ -439,8 +439,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Dep. Variable:                  sales   R-squared:                       0.612
 Model:                            OLS   Adj. R-squared:                  0.610
 Method:                 Least Squares   F-statistic:                     312.1
-Date:                Sun, 02 Oct 2022   Prob (F-statistic):           1.47e-42
-Time:                        22:15:29   Log-Likelihood:                -519.05
+Date:                Tue, 04 Oct 2022   Prob (F-statistic):           1.47e-42
+Time:                        10:24:32   Log-Likelihood:                -519.05
 No. Observations:                 200   AIC:                             1042.
 Df Residuals:                     198   BIC:                             1049.
 Df Model:                           1                                         
@@ -461,18 +461,18 @@ Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="31">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#as example, evaluate the loglik at OLS estimates. Yes, we can get the value in the tablo above.</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#model_tv.loglike(params=[7.0326,0.0475])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="40">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#another example, rsquared is a property for results class. get the rsquare of the model</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#results_tv.rsquared</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#results_tv.mse_resid</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#results_tv.aic</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can also investigate the <strong>relationship between sales and radio</strong>. The results in the following table shows that a $1,000 increase in spending on radio advertising is associated with an increase in sales of around 203 units.</p>
-<div class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Describe model</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>model_radio <span class="op">=</span> sm.OLS(Y, X_radio) </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Fit model and return results object</span></span>
@@ -488,8 +488,8 @@ Notes:
 Dep. Variable:                  sales   R-squared:                       0.332
 Model:                            OLS   Adj. R-squared:                  0.329
 Method:                 Least Squares   F-statistic:                     98.42
-Date:                Sun, 02 Oct 2022   Prob (F-statistic):           4.35e-19
-Time:                        22:15:37   Log-Likelihood:                -573.34
+Date:                Tue, 04 Oct 2022   Prob (F-statistic):           4.35e-19
+Time:                        10:24:32   Log-Likelihood:                -573.34
 No. Observations:                 200   AIC:                             1151.
 Df Residuals:                     198   BIC:                             1157.
 Df Model:                           1                                         
@@ -511,7 +511,7 @@ Notes:
 </div>
 </div>
 <p>We can also further investigate the <strong>relationship between sales and newspaper</strong>. The results in the following table shows that a $1,000 increase in spending on newspaper advertising is associated with an increase in sales of around 55 units.</p>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Describe model</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>model_news <span class="op">=</span> sm.OLS(Y, X_news) </span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Fit model and return results object</span></span>
@@ -527,8 +527,8 @@ Notes:
 Dep. Variable:                  sales   R-squared:                       0.052
 Model:                            OLS   Adj. R-squared:                  0.047
 Method:                 Least Squares   F-statistic:                     10.89
-Date:                Sun, 02 Oct 2022   Prob (F-statistic):            0.00115
-Time:                        18:26:41   Log-Likelihood:                -608.34
+Date:                Tue, 04 Oct 2022   Prob (F-statistic):            0.00115
+Time:                        10:24:32   Log-Likelihood:                -608.34
 No. Observations:                 200   AIC:                             1221.
 Df Residuals:                     198   BIC:                             1227.
 Df Model:                           1                                         
@@ -555,7 +555,7 @@ Notes:
 <li>A better approach would be to fit a multiple linear regression to sales with three predictors such as:</li>
 </ul>
 <p><span class="math display">\[sales_i = \beta_0 +  \beta_1 *TV_i + \beta_2 * radio_i + \beta_3 *newspaper_i + \epsilon_i \quad\]</span> for <span class="math inline">\(i=1,2,\ldots,200\)</span>, where <span class="math inline">\(\epsilon_i \sim N(0,\sigma^2)\)</span>.</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Describe model</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>model_full <span class="op">=</span> sm.OLS(Y, X_full) </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Fit model and return results object</span></span>
@@ -571,8 +571,8 @@ Notes:
 Dep. Variable:                  sales   R-squared:                       0.897
 Model:                            OLS   Adj. R-squared:                  0.896
 Method:                 Least Squares   F-statistic:                     570.3
-Date:                Sun, 02 Oct 2022   Prob (F-statistic):           1.58e-96
-Time:                        18:26:41   Log-Likelihood:                -386.18
+Date:                Tue, 04 Oct 2022   Prob (F-statistic):           1.58e-96
+Time:                        10:24:32   Log-Likelihood:                -386.18
 No. Observations:                 200   AIC:                             780.4
 Df Residuals:                     196   BIC:                             793.6
 Df Model:                           3                                         
@@ -604,9 +604,9 @@ Notes:
 <li><p>One more time: In SLR, the slope term for newspaper represents the average increase in product sales associated with a $ $1,000 $ increase in newspaper advertising, ignoring TV and radio. In MLR, the slope term for newspaper represents the average increase in product sales associated with increasing newspaper spending by $ $1,000$ while holding TV and radio fixed.</p></li>
 <li><p>The correlation between newspaper and radio is around 0.35. The correlation matrix result may imply that: in markets where we spend more on radio our sales will tend to be higher, we also tend to spend more on newspaper advertising in those same markets. Hence, in SLR which only examines sales versus newspaper, we will observe that higher values of newspaper tend to associated with higher values of sales, even though newspaper advertising is not directly associated with sales as MLR shows. So newspaper advertising is a surrogate for radio advertising: newspaper gets “credit” for the association between radio on sales.</p></li>
 </ul>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>advertise_df.corr()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="12">
 
 <div>
 
@@ -668,9 +668,9 @@ Notes:
 H_{0}:\beta_2=\beta_3=0  \\ \nonumber
 \end{eqnarray}\]</span></p>
 <p>Let’s carry out an F test over full model.</p>
-<div class="cell" data-execution_count="60">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>results_full.compare_f_test(results_tv)[<span class="dv">0</span>:<span class="dv">2</span>] <span class="co">#f_value, p value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="60">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>(272.0406768057634, 2.8294869157010127e-57)</code></pre>
 </div>
 </div>
@@ -680,14 +680,14 @@ H_{0}:\beta_2=\beta_3=0  \\ \nonumber
 F=\frac{(RSS_0-RSS)/q}{RSS/(n-p-1)}  \sim F_{q,(n-p-1)}.
 \nonumber
 \end{equation}\]</span></p>
-<div class="cell" data-execution_count="56">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>RSSo<span class="op">=</span><span class="bu">sum</span>(results_tv.resid<span class="op">**</span><span class="dv">2</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>RSS<span class="op">=</span><span class="bu">sum</span>(results_full.resid<span class="op">**</span><span class="dv">2</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> (RSSo<span class="op">-</span>RSS)<span class="op">/</span><span class="dv">2</span> <span class="co">#q=2</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>denom <span class="op">=</span>RSS<span class="op">/</span>(<span class="dv">200</span><span class="op">-</span><span class="dv">4</span>) <span class="co">#p=3, n=200</span></span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> num <span class="op">/</span>denom</span>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>F</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="56">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>272.04067680576344</code></pre>
 </div>
 </div>
@@ -695,6 +695,108 @@ F=\frac{(RSS_0-RSS)/q}{RSS/(n-p-1)}  \sim F_{q,(n-p-1)}.
 <section id="reference" class="level2">
 <h2 class="anchored" data-anchor-id="reference">Reference</h2>
 <p>James, G., Witten, D., Hastie, T., and Tibshirani, R. (2021). <a href="https://www.statlearning.com/">An Introduction to Statistical Learning: With Applications in R</a>. New York: Springer.</p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> session_info</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>session_info.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<details>
+<summary>Click to view session information</summary>
+<pre>-----
+numpy               1.21.2
+pandas              1.3.3
+session_info        1.0.0
+statsmodels         0.13.2
+-----
+</pre>
+<details>
+<summary>Click to view modules imported as dependencies</summary>
+<pre>anyio                       NA
+appnope                     0.1.2
+attr                        21.2.0
+babel                       2.9.1
+backcall                    0.2.0
+beta_ufunc                  NA
+binom_ufunc                 NA
+brotli                      1.0.9
+certifi                     2021.05.30
+chardet                     4.0.0
+charset_normalizer          2.0.0
+colorama                    0.4.4
+cython_runtime              NA
+dateutil                    2.8.2
+debugpy                     1.4.1
+decorator                   5.1.0
+entrypoints                 0.3
+google                      NA
+idna                        3.1
+ipykernel                   6.4.1
+ipython_genutils            0.2.0
+jedi                        0.18.0
+jinja2                      3.0.1
+joblib                      1.1.0
+json5                       NA
+jsonschema                  3.2.0
+jupyter_server              1.11.0
+jupyterlab_server           2.8.1
+lz4                         4.0.0
+markupsafe                  2.0.1
+mpl_toolkits                NA
+nbclassic                   NA
+nbformat                    5.1.3
+nbinom_ufunc                NA
+packaging                   21.3
+parso                       0.8.2
+patsy                       0.5.2
+pexpect                     4.8.0
+pickleshare                 0.7.5
+pkg_resources               NA
+prometheus_client           NA
+prompt_toolkit              3.0.20
+ptyprocess                  0.7.0
+pvectorc                    NA
+pydev_ipython               NA
+pydevconsole                NA
+pydevd                      2.4.1
+pydevd_concurrency_analyser NA
+pydevd_file_utils           NA
+pydevd_plugins              NA
+pydevd_tracing              NA
+pygments                    2.10.0
+pyrsistent                  NA
+pytz                        2021.1
+requests                    2.26.0
+scipy                       1.7.1
+send2trash                  NA
+six                         1.16.0
+sniffio                     1.2.0
+socks                       1.7.1
+storemagic                  NA
+terminado                   0.12.1
+tornado                     6.1
+traitlets                   5.1.0
+typing_extensions           NA
+uritemplate                 4.1.1
+urllib3                     1.26.7
+wcwidth                     0.2.5
+websocket                   0.57.0
+zmq                         22.3.0
+</pre>
+</details> <!-- seems like this ends pre, so might as well be explicit -->
+<pre>-----
+IPython             7.27.0
+jupyter_client      7.0.3
+jupyter_core        4.8.1
+jupyterlab          3.1.12
+notebook            6.4.4
+-----
+Python 3.8.12 | packaged by conda-forge | (default, Sep 16 2021, 01:59:00) [Clang 11.1.0 ]
+macOS-10.15.7-x86_64-i386-64bit
+-----
+Session information updated at 2022-10-04 10:24
+</pre>
+</details>
+</div>
+</div>
 
 
 </section>
