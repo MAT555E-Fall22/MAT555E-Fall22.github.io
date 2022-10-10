@@ -17,7 +17,7 @@ format:
 ## Learning Objectives
 
 -   Two different cultures: Statistical inference vs Statistical learning
--   Supervised learning as a prediction
+-   Supervised learning as a prediction problem
 -   Supervised learning workflow in practice
 -   Regression as a supervised learning problem
 -   Introduction to [scikit-learn](https://scikit-learn.org/stable/index.html) API
