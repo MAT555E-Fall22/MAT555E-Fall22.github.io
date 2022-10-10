@@ -1,0 +1,35 @@
+---
+title: "Week 04"
+author: "Gül İnan"
+date: "October 11, 2022"
+comments:
+  hypothesis: 
+    theme: clean
+execute: 
+  enabled: true
+  warning: false
+  error: false
+format: 
+  html:
+    code-fold: false
+---
+
+## Learning Objectives
+
+-   Two different cultures: Statistical inference vs Statistical learning
+-   Supervised learning as a prediction
+-   Supervised learning workflow in practice
+-   Regression as a supervised learning problem
+-   Introduction to [scikit-learn](https://scikit-learn.org/stable/index.html) API
+-   Implementing a linear regression model through [LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) module
+-   Evaluating model performance through regression metrics of [sklearn.metrics](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics)
+
+
+## Lecture Slides
+- Lecture slides and lab materials will be on Ninova. If you are one of the students coming to this class for auditing,
+please send your ITU ID number to me so that I can add you on the Ninova class.
+
+- Unfortunately, I have decided not to post my lecture slides and lab materials on the web any more. I have had some concerns that my data science related course contents are being used or replicated without acknowledging me or letting me know it. I prepare my notes from scratch and use other scholars' content too. But, I always try to acknowledge them (ask for their permission, giving citation etc). 
+
+
+
