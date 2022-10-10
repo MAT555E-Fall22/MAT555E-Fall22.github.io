@@ -21,7 +21,7 @@ format:
 -   Supervised learning workflow in practice
 -   Regression as a supervised learning problem
 -   Introduction to [scikit-learn](https://scikit-learn.org/stable/index.html) API
--   Implementing a linear regression model through [LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) module
+-   Implementing a linear regression model through [LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) class
 -   Evaluating model performance through regression metrics of [sklearn.metrics](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics)
 
 

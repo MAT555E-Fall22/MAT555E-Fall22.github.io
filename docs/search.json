@@ -109,7 +109,7 @@
     "href": "lectures/Week_04/index.html",
     "title": "Week 04",
     "section": "",
-    "text": "Two different cultures: Statistical inference vs Statistical learning\nSupervised learning as a prediction problem\nSupervised learning workflow in practice\nRegression as a supervised learning problem\nIntroduction to scikit-learn API\nImplementing a linear regression model through LinearRegression module\nEvaluating model performance through regression metrics of sklearn.metrics"
+    "text": "Two different cultures: Statistical inference vs Statistical learning\nSupervised learning as a prediction problem\nSupervised learning workflow in practice\nRegression as a supervised learning problem\nIntroduction to scikit-learn API\nImplementing a linear regression model through LinearRegression class\nEvaluating model performance through regression metrics of sklearn.metrics"
   },
   {
     "objectID": "lectures/Week_04/index.html#lecture-slides",
