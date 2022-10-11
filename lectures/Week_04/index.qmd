@@ -28,7 +28,7 @@ format:
 ## Lecture Slides
 - Lecture slides and lab materials are in a private repo at course GitHub organization.
 If you are one of the students coming to this class for auditing,
-please send your GitHub number to me so that I can add you on the repo.
+please send your GitHub username to me so that I can add you on the repo.
 
 
 
