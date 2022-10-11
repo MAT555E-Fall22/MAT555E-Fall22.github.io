@@ -227,6 +227,10 @@ When the semester starts, I urge you to visit [Proceedings of Machine Learning R
 
 I can anticipate that the content of these papers may be very heavy compared to our class topics. However, the main aim of group-based paper presentation (along with a report submission) is to asses whether you are able to read and understand a research problem recently carried out, and suggest an improvement (e.g., mathematical or computational) as an extension of the paper. The group size can be at most 2 and the presentation duration is 30 minutes (25 min. talk + 5 min. Q.A.).
 
+I also found the suggestions of Prof. Pranav Rajpurkar on "How to find good research ideas" listed here useful:
+
+<https://docs.google.com/document/d/15pnUpD47S6mAM-g4fwQvc2klYIb-GKgWex1oOlmNjvg/edit>
+
 <p>
 
 ## Final exam date and coverage
