@@ -2,50 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://MAT555E-Fall22.github.io/index.html</loc>
-    <lastmod>2022-10-11T16:55:03.290Z</lastmod>
+    <lastmod>2022-10-17T16:53:09.729Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/instructor.html</loc>
-    <lastmod>2022-10-11T16:55:03.742Z</lastmod>
+    <lastmod>2022-10-17T16:53:10.246Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/syllabus.html</loc>
-    <lastmod>2022-10-11T16:55:04.469Z</lastmod>
+    <lastmod>2022-10-17T16:53:11.032Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_04/index.html</loc>
-    <lastmod>2022-10-11T16:55:05.327Z</lastmod>
+    <lastmod>2022-10-17T16:53:11.598Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_03/Week_03_MLR.html</loc>
-    <lastmod>2022-10-11T16:55:06.041Z</lastmod>
+    <lastmod>2022-10-17T16:53:12.231Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_03/index.html</loc>
-    <lastmod>2022-10-11T16:55:06.458Z</lastmod>
+    <lastmod>2022-10-17T16:53:12.660Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_02/index.html</loc>
-    <lastmod>2022-10-11T16:55:06.858Z</lastmod>
+    <lastmod>2022-10-17T16:53:13.126Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_02/Week_02_SLR.html</loc>
-    <lastmod>2022-10-11T16:55:07.369Z</lastmod>
+    <lastmod>2022-10-17T16:53:13.711Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_02/Week_02_Sampling_dist.html</loc>
-    <lastmod>2022-10-11T16:55:07.834Z</lastmod>
+    <lastmod>2022-10-17T16:53:14.180Z</lastmod>
+  </url>
+  <url>
+    <loc>https://MAT555E-Fall22.github.io/lectures/Week_05/index.html</loc>
+    <lastmod>2022-10-17T16:53:14.585Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_01/index.html</loc>
-    <lastmod>2022-10-11T16:55:08.236Z</lastmod>
+    <lastmod>2022-10-17T16:53:15.030Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_01/Week_01_Eda_01.html</loc>
-    <lastmod>2022-10-11T16:55:09.083Z</lastmod>
+    <lastmod>2022-10-17T16:53:15.915Z</lastmod>
   </url>
   <url>
     <loc>https://MAT555E-Fall22.github.io/lectures/Week_01/Week_01_Eda_02.html</loc>
-    <lastmod>2022-10-11T16:55:09.709Z</lastmod>
+    <lastmod>2022-10-17T16:53:16.549Z</lastmod>
   </url>
 </urlset>
