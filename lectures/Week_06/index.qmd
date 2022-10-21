@@ -20,6 +20,7 @@ format:
 -   Over-fitting, Under-fitting
 -   Bias and Variance Decomposition
 -   No free lunch theorem
+-   Unsupervised Data Pre-processing
 
 
 ## Lecture Slides
