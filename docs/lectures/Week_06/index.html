@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gül İnan">
-<meta name="dcterms.date" content="2022-10-18">
+<meta name="dcterms.date" content="2022-10-25">
 
-<title>MAT555E - Week 05</title>
+<title>MAT555E - Week 06</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -27,6 +27,8 @@ ul.task-list{list-style: none;}
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../lectures/Week_01/Week_01_Eda_01.html" rel="next">
+<link href="../../lectures/Week_05/index.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +74,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Week 05</h1>
+      <h1 class="quarto-secondary-nav-title">Week 06</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -157,6 +159,11 @@ ul.task-list{list-style: none;}
   <a href="../../lectures/Week_05/index.html" class="sidebar-item-text sidebar-link">Week 05</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lectures/Week_06/index.html" class="sidebar-item-text sidebar-link active">Week 06</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -234,7 +241,6 @@ ul.task-list{list-style: none;}
    
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#lecture-slides" id="toc-lecture-slides" class="nav-link" data-scroll-target="#lecture-slides">Lecture Slides</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/edit/main/lectures/Week_06/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -243,7 +249,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Week 05</h1>
+<h1 class="title d-none d-lg-block">Week 06</h1>
 </div>
 
 
@@ -260,7 +266,7 @@ ul.task-list{list-style: none;}
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 18, 2022</p>
+      <p class="date">October 25, 2022</p>
     </div>
   </div>
     
@@ -272,17 +278,12 @@ ul.task-list{list-style: none;}
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Monitoring errors for model choice</li>
-<li>Over-fitting, Under-fitting</li>
-<li>Bias and Variance Decomposition</li>
+<li>Bias and variance decomposition</li>
 <li>No free lunch theorem</li>
-<li>Unsupervised Data Pre-processing</li>
-</ul>
-</section>
-<section id="lecture-slides" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-slides">Lecture Slides</h2>
-<ul>
-<li>Lecture slides and lab materials are in a private repo at course GitHub organization. If you are one of the students coming to this class for auditing, please send your GitHub username to me so that I can add you onto the repo.</li>
+<li>K-fold cross-validation</li>
+<li>Leave-one-out cross-validation</li>
+<li>Implementation of cross-validation in scikit-learn</li>
+<li>Unsupervised data processing</li>
 </ul>
 
 
@@ -386,6 +387,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../lectures/Week_05/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 05</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../lectures/Week_01/Week_01_Eda_01.html" class="pagination-link">
+        <span class="nav-page-text">Lab 01</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

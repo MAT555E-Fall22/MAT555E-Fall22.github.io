@@ -1,7 +1,7 @@
 ---
-title: "Week 05"
+title: "Week 06"
 author: "Gül İnan"
-date: "October 18, 2022"
+date: "October 25, 2022"
 comments:
   hypothesis: 
     theme: clean
@@ -16,17 +16,15 @@ format:
 
 ## Learning Objectives
 
--   Monitoring errors for model choice
--   Over-fitting, Under-fitting
--   Bias and Variance Decomposition
+-   Bias and variance decomposition
 -   No free lunch theorem
--   Unsupervised Data Pre-processing
+-   K-fold cross-validation
+-   Leave-one-out cross-validation
+-   Implementation of cross-validation in scikit-learn
+-   Unsupervised data processing
 
 
-## Lecture Slides
-- Lecture slides and lab materials are in a private repo at course GitHub organization.
-If you are one of the students coming to this class for auditing,
-please send your GitHub username to me so that I can add you onto the repo.
+
 
 
 

@@ -18,9 +18,6 @@ format:
 
 -   Monitoring errors for model choice
 -   Over-fitting, Under-fitting
--   Bias and Variance Decomposition
--   No free lunch theorem
-
 
 ## Lecture Slides
 - Lecture slides and lab materials are in a private repo at course GitHub organization.

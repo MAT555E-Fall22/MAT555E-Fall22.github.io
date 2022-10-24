@@ -214,7 +214,7 @@
     "href": "lectures/Week_05/index.html",
     "title": "Week 05",
     "section": "",
-    "text": "Monitoring errors for model choice\nOver-fitting, Under-fitting\nBias and Variance Decomposition\nNo free lunch theorem"
+    "text": "Monitoring errors for model choice\nOver-fitting, Under-fitting"
   },
   {
     "objectID": "lectures/Week_05/index.html#lecture-slides",
@@ -240,16 +240,9 @@
   {
     "objectID": "lectures/Week_06/index.html",
     "href": "lectures/Week_06/index.html",
-    "title": "Week 05",
+    "title": "Week 06",
     "section": "",
-    "text": "Monitoring errors for model choice\nOver-fitting, Under-fitting\nBias and Variance Decomposition\nNo free lunch theorem\nUnsupervised Data Pre-processing"
-  },
-  {
-    "objectID": "lectures/Week_06/index.html#lecture-slides",
-    "href": "lectures/Week_06/index.html#lecture-slides",
-    "title": "Week 05",
-    "section": "Lecture Slides",
-    "text": "Lecture Slides\n\nLecture slides and lab materials are in a private repo at course GitHub organization. If you are one of the students coming to this class for auditing, please send your GitHub username to me so that I can add you onto the repo."
+    "text": "Bias and variance decomposition\nNo free lunch theorem\nK-fold cross-validation\nLeave-one-out cross-validation\nImplementation of cross-validation in scikit-learn\nUnsupervised data processing"
   },
   {
     "objectID": "lectures/Week_01/index.html",
