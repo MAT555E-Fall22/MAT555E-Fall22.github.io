@@ -228,7 +228,7 @@
     "href": "lectures/Week_07/index.html",
     "title": "Week 07",
     "section": "",
-    "text": "Ridge regression theory\nRegularization\nPenalized least squares estimation\nRidge regression vs lasso regression\nTuning parameter selection with GridSearchCV in Python"
+    "text": "Ridge regression theory\nRegularization\nPenalized least squares estimation\nRidge regression vs lasso regression\nTuning parameter selection in Python"
   },
   {
     "objectID": "lectures/Week_06/index.html",

@@ -20,7 +20,7 @@ format:
 -   Regularization
 -   Penalized least squares estimation
 -   Ridge regression vs lasso regression
--   Tuning parameter selection with GridSearchCV in Python
+-   Tuning parameter selection in Python
 
 
 
