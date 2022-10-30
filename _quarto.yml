@@ -44,7 +44,8 @@ website:
           - href: lectures/Week_03/index.qmd  
           - href: lectures/Week_04/index.qmd 
           - href: lectures/Week_05/index.qmd 
-          - href: lectures/Week_06/index.qmd  
+          - href: lectures/Week_06/index.qmd
+          - href: lectures/Week_07/index.qmd   
       - section: "**Lab Materials**"
         contents:
           - section: "Week 01"

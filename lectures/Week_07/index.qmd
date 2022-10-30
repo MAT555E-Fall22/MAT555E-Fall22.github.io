@@ -1,7 +1,7 @@
 ---
-title: "Week 05"
+title: "Week 07"
 author: "Gül İnan"
-date: "October 18, 2022"
+date: "Novermber 01, 2022"
 comments:
   hypothesis: 
     theme: clean
@@ -16,18 +16,11 @@ format:
 
 ## Learning Objectives
 
--   Monitoring errors for model choice
--   Over-fitting, Under-fitting
--   Bias and Variance Decomposition
--   No free lunch theorem
--   Unsupervised Data Pre-processing
-
-
-## Lecture Slides
-- Lecture slides and lab materials are in a private repo at course GitHub organization.
-If you are one of the students coming to this class for auditing,
-please send your GitHub username to me so that I can add you onto the repo.
-
+-   Ridge regression theory
+-   Regularization
+-   Penalized least squares estimation
+-   Ridge regression vs lasso regression
+-   Tuning parameter selection with GridSearchCV in Python
 
 
 

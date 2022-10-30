@@ -70,8 +70,6 @@ Since the course also touches on the mathematical and statistical theory behind 
 
 `CRN 14267:` Tuesdays between 14:30-17:30 at **OBL3** (Computer Lab).
 
-
-
 ::: callout-important
-**A kind request:** If you are a statistics educator, especially in Turkey, and my course website, course materials, and instructional activities motivate you to adapt a similar philosophy for your class, **PLEASE** let me know it via inan@itu.edu.tr. I will also appreciate if you would acknowledge me on your course syllabus and website etc. 
+**A kind request:** If you are a statistics educator, especially in Turkey, and my course website, course materials, and instructional activities motivate you to adapt a similar philosophy for your class, **PLEASE** let me know it via inan\@itu.edu.tr. I will also appreciate if you would acknowledge me on your course syllabus and website etc.
 :::
