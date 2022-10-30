@@ -22,7 +22,7 @@ editor: visual
 
 <li>Extensions of these methods to high-dimensional settings will also be discussed, and</li>
 
-<li>Application of these methods to data analysis problems and their software implementation will be done via [Python](https://www.python.org/downloads/) (v. 3.10.6).</li>
+<li>Application of these methods to data analysis problems and their software implementation will be done via [Python](https://www.python.org/downloads/).</li>
 
 </ul>
 
