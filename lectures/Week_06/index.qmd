@@ -21,7 +21,7 @@ format:
 -   K-fold cross-validation
 -   Leave-one-out cross-validation
 -   Implementation of cross-validation in scikit-learn
--   Unsupervised data processing
+-   Data processing
 
 
 

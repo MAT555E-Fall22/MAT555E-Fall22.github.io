@@ -235,7 +235,7 @@
     "href": "lectures/Week_06/index.html",
     "title": "Week 06",
     "section": "",
-    "text": "Bias and variance decomposition\nNo free lunch theorem\nK-fold cross-validation\nLeave-one-out cross-validation\nImplementation of cross-validation in scikit-learn\nUnsupervised data processing"
+    "text": "Bias and variance decomposition\nNo free lunch theorem\nK-fold cross-validation\nLeave-one-out cross-validation\nImplementation of cross-validation in scikit-learn\nData processing"
   },
   {
     "objectID": "lectures/Week_01/index.html",
