@@ -10,6 +10,10 @@ editor: visual
 
 **Course Instructor:** [Gül İnan](https://gulinan.github.io/)
 
+
+**Announcement:** We will have [Serdar Kiraz](https://tr.linkedin.com/in/serdar-kiraz?trk=public_profile_browsemap) from Beymen Advanced Analytics as a guest lecturer on December 6, 2022. He will teach us "Tree-based Algorithms" from industry perspective. 
+
+
 **Course Summary:**
 
 <p align="justify">
