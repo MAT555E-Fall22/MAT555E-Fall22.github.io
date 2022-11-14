@@ -16,10 +16,10 @@ format:
 
 ## Learning Objectives
 
--   Multivariate Normal (MVN) Distribution
+- Multivariate Normal (MVN) Distribution
      -   Bivariate Normal Distribution
      -   Maximum Likelihood Estimation for MVN
--   Introduction to Classification
+-  Introduction to Classification
     -   Terminologies associated with Classification
 
 
