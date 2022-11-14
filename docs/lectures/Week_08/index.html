@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gül İnan">
-<meta name="dcterms.date" content="2022-09-27">
+<meta name="dcterms.date" content="2022-11-15">
 
-<title>MAT555E - Week 02</title>
+<title>MAT555E - Week 08</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -27,8 +27,8 @@ ul.task-list{list-style: none;}
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../lectures/Week_03/index.html" rel="next">
-<link href="../../lectures/Week_01/index.html" rel="prev">
+<link href="../../lectures/Week_01/Week_01_Eda_01.html" rel="next">
+<link href="../../lectures/Week_07/index.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +74,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Week 02</h1>
+      <h1 class="quarto-secondary-nav-title">Week 08</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -141,7 +141,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lectures/Week_02/index.html" class="sidebar-item-text sidebar-link active">Week 02</a>
+  <a href="../../lectures/Week_02/index.html" class="sidebar-item-text sidebar-link">Week 02</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -171,7 +171,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lectures/Week_08/index.html" class="sidebar-item-text sidebar-link">Week 08</a>
+  <a href="../../lectures/Week_08/index.html" class="sidebar-item-text sidebar-link active">Week 08</a>
   </div>
 </li>
       </ul>
@@ -251,17 +251,15 @@ ul.task-list{list-style: none;}
    
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#lecture-slides" id="toc-lecture-slides" class="nav-link" data-scroll-target="#lecture-slides">Lecture Slides</a></li>
-  <li><a href="#lab-materials" id="toc-lab-materials" class="nav-link" data-scroll-target="#lab-materials">Lab Materials</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/edit/main/lectures/Week_02/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/edit/main/lectures/Week_08/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/MAT555E-Fall22/MAT555E-Fall22.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Week 02</h1>
+<h1 class="title d-none d-lg-block">Week 08</h1>
 </div>
 
 
@@ -278,7 +276,7 @@ ul.task-list{list-style: none;}
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 27, 2022</p>
+      <p class="date">November 15, 2022</p>
     </div>
   </div>
     
@@ -290,22 +288,15 @@ ul.task-list{list-style: none;}
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Introduction simple linear regression</li>
-<li>Least-squares estimation</li>
-<li>Building a simple linear regression model</li>
-<li>Implementing a simple linear regression model with Python <a href="https://www.statsmodels.org/stable/index.html">statsmodels</a> library</li>
-</ul>
-</section>
-<section id="lecture-slides" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-slides">Lecture Slides</h2>
-<object data="https://nbviewer.org/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_Intro_SLR.pdf" width="750" height="600" type="application/pdf">
-</object>
-</section>
-<section id="lab-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lab-materials">Lab Materials</h2>
+<li>Multivariate Normal (MVN) Distribution
 <ul>
-<li><a href="https://colab.research.google.com/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_Sampling_dist.ipynb">The Sampling Distribution of OLS Estimators</a></li>
-<li><a href="https://colab.research.google.com/github/MAT555E-Fall22/MAT555E-Fall22.github.io/blob/main/lectures/Week_02/Week_02_SLR.ipynb">Simple Linear Regression Analysis</a></li>
+<li>Bivariate Normal Distribution</li>
+<li>Maximum Likelihood Estimation for MVN</li>
+</ul></li>
+<li>Introduction to Classification
+<ul>
+<li>Terminologies associated with Classification</li>
+</ul></li>
 </ul>
 
 
@@ -411,13 +402,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../lectures/Week_01/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 01</span>
+      <a href="../../lectures/Week_07/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 07</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../lectures/Week_03/index.html" class="pagination-link">
-        <span class="nav-page-text">Week 03</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../lectures/Week_01/Week_01_Eda_01.html" class="pagination-link">
+        <span class="nav-page-text">Lab 01</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

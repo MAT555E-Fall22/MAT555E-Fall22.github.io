@@ -1,0 +1,25 @@
+---
+title: "Week 08"
+author: "Gül İnan"
+date: "November 15, 2022"
+comments:
+  hypothesis: 
+    theme: clean
+execute: 
+  enabled: true
+  warning: false
+  error: false
+format: 
+  html:
+    code-fold: false
+---
+
+## Learning Objectives
+
+-   Multivariate Normal (MVN) Distribution
+     -   Bivariate Normal Distribution
+     -   Maximum Likelihood Estimation for MVN
+-   Introduction to Classification
+    -   Terminologies associated with Classification
+
+
