@@ -213,7 +213,7 @@ Please read the information below as a reference for how this class will be cond
 
 <p align="justify">
 
-The midterm will be on `November 3rd, 2022 between 17:30-20:30`. The midterm topics will cover whatever we have covered up to that week. The main aim of the midterm is to assess whether you are able to frame a data analysis problem, implement it, and report the results. The midterm will be hands-on and open-book exam. For that reason, you have to bring your own portable computer to the exam place.
+The midterm will be on `November 17th, 2022 between 17:30-20:30`. The midterm topics will cover whatever we have covered up to that week. The main aim of the midterm is to assess whether you are able to frame a data analysis problem, implement it, and report the results. The midterm will be hands-on and open-book exam. For that reason, you have to bring your own portable computer to the exam place.
 
 <p>
 
@@ -221,7 +221,7 @@ The midterm will be on `November 3rd, 2022 between 17:30-20:30`. The midterm top
 
 <p align="justify">
 
-The group-based paper presentations will be on `December 8th, 2022 between 17:30-20:30`.
+The group-based paper presentations will be on `December 15th, 2022 between 17:30-20:30`.
 
 When the semester starts, I urge you to visit [Proceedings of Machine Learning Research](https://proceedings.mlr.press/) and pick a paper published within nearly past three years (2022, 2021, and 2020) at [AISTATS](https://aistats.org/), [ICML](https://icml.cc/), or [NeurIPS](https://nips.cc/). I would like to hear about papers on `explainable AI (XAI)` a lot, but, feel free to select a topic on your own interest.
 
