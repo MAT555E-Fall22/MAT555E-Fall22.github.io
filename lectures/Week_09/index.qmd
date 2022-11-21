@@ -18,5 +18,5 @@ format:
 
 -  Introduction to Classification
     -   Terminologies associated with Classification
-
+-   Generative Learning Algorithms
 

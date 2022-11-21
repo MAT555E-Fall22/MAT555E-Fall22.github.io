@@ -231,6 +231,13 @@
     "text": "Ridge regression theory\nRegularization\nPenalized least squares estimation\nRidge regression vs lasso regression\nTuning parameter selection in Python"
   },
   {
+    "objectID": "lectures/Week_09/index.html",
+    "href": "lectures/Week_09/index.html",
+    "title": "Week 08",
+    "section": "",
+    "text": "Introduction to Classification\n\nTerminologies associated with Classification\n\nGenerative Learning Algorithms"
+  },
+  {
     "objectID": "lectures/Week_08/index.html",
     "href": "lectures/Week_08/index.html",
     "title": "Week 08",
@@ -341,12 +348,5 @@
     "title": "Lab 02",
     "section": "Tools for Displaying More Than Two Variables",
     "text": "Tools for Displaying More Than Two Variables\n\nScatterplot Matrix\n\nDisplaying more than two variables on a single scatterplot is not possible.\nA scatterplot matrix is one possible visualization of three or more continuous variables taken two at a time.\n\n\n#https://seaborn.pydata.org/generated/seaborn.pairplot.html\n#let's get a pairwise matrix plot of some variables. \n#diag_kind = None, otherwise histogram appears on the diagonals.\nsns.pairplot(college_df, vars = ['Outstate', 'Grad.Rate', 'Personal'], diag_kind = None, hue = 'Private');\n\n\n\n\n\nimport numpy as np\ndf = college_df[['Outstate', 'Grad.Rate', 'Personal']]\ndf.corr()\n\n\n\n\n\n  \n    \n      \n      Outstate\n      Grad.Rate\n      Personal\n    \n  \n  \n    \n      Outstate\n      1.000000\n      0.571290\n      -0.299087\n    \n    \n      Grad.Rate\n      0.571290\n      1.000000\n      -0.269344\n    \n    \n      Personal\n      -0.299087\n      -0.269344\n      1.000000\n    \n  \n\n\n\n\n\nimport session_info\nsession_info.show()\n\n\nClick to view session information\n-----\nmatplotlib          3.4.3\nnumpy               1.21.2\npandas              1.3.3\nseaborn             0.11.2\nsession_info        1.0.0\n-----\n\n\nClick to view modules imported as dependencies\nPIL                         8.3.2\nanyio                       NA\nappnope                     0.1.2\nattr                        21.2.0\nbabel                       2.9.1\nbackcall                    0.2.0\nbeta_ufunc                  NA\nbinom_ufunc                 NA\nbrotli                      1.0.9\ncertifi                     2021.05.30\ncffi                        1.14.6\nchardet                     4.0.0\ncharset_normalizer          2.0.0\ncolorama                    0.4.4\ncycler                      0.10.0\ncython_runtime              NA\ndateutil                    2.8.2\ndebugpy                     1.4.1\ndecorator                   5.1.0\ndefusedxml                  0.7.1\nentrypoints                 0.3\ngoogle                      NA\nidna                        3.1\nipykernel                   6.4.1\nipython_genutils            0.2.0\nipywidgets                  7.6.5\njedi                        0.18.0\njinja2                      3.0.1\njson5                       NA\njsonschema                  3.2.0\njupyter_server              1.11.0\njupyterlab_server           2.8.1\nkiwisolver                  1.3.2\nmarkupsafe                  2.0.1\nmatplotlib_inline           NA\nmpl_toolkits                NA\nnbclassic                   NA\nnbformat                    5.1.3\nnbinom_ufunc                NA\npackaging                   21.3\nparso                       0.8.2\npexpect                     4.8.0\npickleshare                 0.7.5\npkg_resources               NA\nprometheus_client           NA\nprompt_toolkit              3.0.20\nptyprocess                  0.7.0\npvectorc                    NA\npydev_ipython               NA\npydevconsole                NA\npydevd                      2.4.1\npydevd_concurrency_analyser NA\npydevd_file_utils           NA\npydevd_plugins              NA\npydevd_tracing              NA\npygments                    2.10.0\npyparsing                   2.4.7\npyrsistent                  NA\npytz                        2021.1\nrequests                    2.26.0\nscipy                       1.7.1\nsend2trash                  NA\nsix                         1.16.0\nsniffio                     1.2.0\nsocks                       1.7.1\nstatsmodels                 0.13.2\nstoremagic                  NA\nterminado                   0.12.1\ntornado                     6.1\ntraitlets                   5.1.0\nurllib3                     1.26.7\nwcwidth                     0.2.5\nwebsocket                   0.57.0\nzmq                         22.3.0\n\n \n-----\nIPython             7.27.0\njupyter_client      7.0.3\njupyter_core        4.8.1\njupyterlab          3.1.12\nnotebook            6.4.4\n-----\nPython 3.8.12 | packaged by conda-forge | (default, Sep 16 2021, 01:59:00) [Clang 11.1.0 ]\nmacOS-10.15.7-x86_64-i386-64bit\n-----\nSession information updated at 2022-09-20 00:03"
-  },
-  {
-    "objectID": "lectures/Week_09/index.html",
-    "href": "lectures/Week_09/index.html",
-    "title": "Week 08",
-    "section": "",
-    "text": "Introduction to Classification\n\nTerminologies associated with Classification"
   }
 ]
