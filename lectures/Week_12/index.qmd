@@ -1,0 +1,21 @@
+---
+title: "Week 09"
+author: "Gül İnan"
+date: "December 13, 2022"
+comments:
+  hypothesis: 
+    theme: clean
+execute: 
+  enabled: true
+  warning: false
+  error: false
+format: 
+  html:
+    code-fold: false
+---
+
+## Learning Objectives
+
+-   Discriminative Classifiers
+    -   Logistic Regression
+
